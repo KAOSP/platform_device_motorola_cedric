@@ -3,13 +3,13 @@
 # Product-specific compile-time definitions.
 #
 
-TARGET_BOARD_PLATFORM := msm8916
-TARGET_BOOTLOADER_BOARD_NAME := msm8916
+TARGET_BOARD_PLATFORM := tellurium
+TARGET_BOOTLOADER_BOARD_NAME := tellurium
 
 BOARD_USES_GENERIC_AUDIO := true
 USE_CAMERA_STUB := true
 
--include $(QCPATH)/common/msm8916/BoardConfigVendor.mk
+-include $(QCPATH)/common/tellurium_64/BoardConfigVendor.mk
 
 # bring-up overrides
 BOARD_USES_GENERIC_AUDIO := true
@@ -28,7 +28,7 @@ TARGET_2ND_CPU_ABI := armeabi-v7a
 TARGET_2ND_CPU_ABI2 := armeabi
 TARGET_2ND_CPU_VARIANT := cortex-a53
 
-TARGET_NO_BOOTLOADER := false
+TARGET_NO_BOOTLOADER := true
 TARGET_NO_KERNEL := false
 
 MALLOC_IMPL := dlmalloc
@@ -77,7 +77,7 @@ MAX_EGL_CACHE_KEY_SIZE := 12*1024
 # of the device.
 MAX_EGL_CACHE_SIZE := 2048*1024
 
-BOARD_EGL_CFG := device/qcom/msm8916_64/egl.cfg
+BOARD_EGL_CFG := device/qcom/tellurium_64/egl.cfg
 TARGET_PLATFORM_DEVICE_BASE := /devices/soc.0/
 # Add NON-HLOS files for ota upgrade
 ADD_RADIO_FILES := true

@@ -1,13 +1,13 @@
-DEVICE_PACKAGE_OVERLAYS := device/qcom/msm8916_64/overlay
+DEVICE_PACKAGE_OVERLAYS := device/qcom/tellurium_64/overlay
 
 TARGET_USES_QCOM_BSP := true
 # Add QC Video Enhancements flag
 TARGET_ENABLE_QC_AV_ENHANCEMENTS := true
 
-# media_profiles and media_codecs xmls for 8916
+# media_profiles and media_codecs xmls for tellurium
 ifeq ($(TARGET_ENABLE_QC_AV_ENHANCEMENTS), true)
-PRODUCT_COPY_FILES += device/qcom/msm8916_32/media/media_profiles_8916.xml:system/etc/media_profiles.xml \
-                      device/qcom/msm8916_32/media/media_codecs_8916.xml:system/etc/media_codecs.xml
+PRODUCT_COPY_FILES += device/qcom/tellurium_32/media/media_profiles_8916.xml:system/etc/media_profiles.xml \
+                      device/qcom/tellurium_32/media/media_codecs_8916.xml:system/etc/media_codecs.xml
 endif
 
 TARGET_USES_QCA_NFC := other
@@ -16,10 +16,10 @@ PRODUCT_PROPERTY_OVERRIDES += \
            dalvik.vm.heapgrowthlimit=128m
 $(call inherit-product, device/qcom/common/common64.mk)
 
-PRODUCT_NAME := msm8916_64
-PRODUCT_DEVICE := msm8916_64
+PRODUCT_NAME := tellurium_64
+PRODUCT_DEVICE := tellurium_64
 PRODUCT_BRAND := Android
-PRODUCT_MODEL := MSM8916 for arm64
+PRODUCT_MODEL := tellurium for arm64
 
 PRODUCT_BOOT_JARS += qcmediaplayer \
                      WfdCommon \
@@ -39,19 +39,19 @@ PRODUCT_PACKAGES += \
 
 # Audio configuration file
 PRODUCT_COPY_FILES += \
-    device/qcom/msm8916_32/audio_policy.conf:system/etc/audio_policy.conf \
-    device/qcom/msm8916_32/audio_effects.conf:system/vendor/etc/audio_effects.conf \
-    device/qcom/msm8916_32/mixer_paths_mtp.xml:system/etc/mixer_paths_mtp.xml \
-    device/qcom/msm8916_32/mixer_paths_qrd_skuh.xml:system/etc/mixer_paths_qrd_skuh.xml \
-    device/qcom/msm8916_32/mixer_paths_qrd_skui.xml:system/etc/mixer_paths_qrd_skui.xml \
-    device/qcom/msm8916_32/mixer_paths_qrd_skuhf.xml:system/etc/mixer_paths_qrd_skuhf.xml \
-    device/qcom/msm8916_32/mixer_paths_wcd9306.xml:system/etc/mixer_paths_wcd9306.xml \
-    device/qcom/msm8916_32/mixer_paths_skuk.xml:system/etc/mixer_paths_skuk.xml \
-    device/qcom/msm8916_32/mixer_paths.xml:system/etc/mixer_paths.xml \
-    device/qcom/msm8916_32/sound_trigger_mixer_paths.xml:system/etc/sound_trigger_mixer_paths.xml \
-    device/qcom/msm8916_32/sound_trigger_mixer_paths_wcd9306.xml:system/etc/sound_trigger_mixer_paths_wcd9306.xml \
-    device/qcom/msm8916_32/sound_trigger_platform_info.xml:system/etc/sound_trigger_platform_info.xml \
-    device/qcom/msm8916_64/aanc_tuning_mixer.txt:system/etc/aanc_tuning_mixer.txt
+    device/qcom/tellurium_32/audio_policy.conf:system/etc/audio_policy.conf \
+    device/qcom/tellurium_32/audio_effects.conf:system/vendor/etc/audio_effects.conf \
+    device/qcom/tellurium_32/mixer_paths_mtp.xml:system/etc/mixer_paths_mtp.xml \
+    device/qcom/tellurium_32/mixer_paths_qrd_skuh.xml:system/etc/mixer_paths_qrd_skuh.xml \
+    device/qcom/tellurium_32/mixer_paths_qrd_skui.xml:system/etc/mixer_paths_qrd_skui.xml \
+    device/qcom/tellurium_32/mixer_paths_qrd_skuhf.xml:system/etc/mixer_paths_qrd_skuhf.xml \
+    device/qcom/tellurium_32/mixer_paths_wcd9306.xml:system/etc/mixer_paths_wcd9306.xml \
+    device/qcom/tellurium_32/mixer_paths_skuk.xml:system/etc/mixer_paths_skuk.xml \
+    device/qcom/tellurium_32/mixer_paths.xml:system/etc/mixer_paths.xml \
+    device/qcom/tellurium_32/sound_trigger_mixer_paths.xml:system/etc/sound_trigger_mixer_paths.xml \
+    device/qcom/tellurium_32/sound_trigger_mixer_paths_wcd9306.xml:system/etc/sound_trigger_mixer_paths_wcd9306.xml \
+    device/qcom/tellurium_32/sound_trigger_platform_info.xml:system/etc/sound_trigger_platform_info.xml \
+    device/qcom/tellurium_64/aanc_tuning_mixer.txt:system/etc/aanc_tuning_mixer.txt
 
 
 #ANT+ stack
@@ -65,12 +65,12 @@ PRODUCT_PACKAGES += wcnss_service
 
 # MSM IRQ Balancer configuration file
 PRODUCT_COPY_FILES += \
-    device/qcom/msm8916_64/msm_irqbalance.conf:system/vendor/etc/msm_irqbalance.conf
+    device/qcom/tellurium_64/msm_irqbalance.conf:system/vendor/etc/msm_irqbalance.conf
 
 #wlan driver
 PRODUCT_COPY_FILES += \
-    device/qcom/msm8916_64/WCNSS_qcom_cfg.ini:system/etc/wifi/WCNSS_qcom_cfg.ini \
-    device/qcom/msm8916_64/WCNSS_qcom_wlan_nv.bin:persist/WCNSS_qcom_wlan_nv.bin
+    device/qcom/tellurium_64/WCNSS_qcom_cfg.ini:system/etc/wifi/WCNSS_qcom_cfg.ini \
+    device/qcom/tellurium_64/WCNSS_qcom_wlan_nv.bin:persist/WCNSS_qcom_wlan_nv.bin
 
 PRODUCT_PACKAGES += \
     wpa_supplicant_overlay.conf \
