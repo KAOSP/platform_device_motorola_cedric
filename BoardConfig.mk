@@ -7,13 +7,11 @@ TARGET_BOARD_PLATFORM := tellurium
 TARGET_BOOTLOADER_BOARD_NAME := tellurium
 
 BOARD_USES_GENERIC_AUDIO := true
-USE_CAMERA_STUB := true
 
 -include $(QCPATH)/common/tellurium_64/BoardConfigVendor.mk
 
 # bring-up overrides
 BOARD_USES_GENERIC_AUDIO := true
-USE_CAMERA_STUB := true
 
 NUM_FRAMEBUFFER_SURFACE_BUFFERS := 3
 TARGET_ARCH := arm64
