@@ -69,6 +69,11 @@ service qcamerasvr /system/bin/mm-qcamera-daemon
 on property:ro.config.zram=true
     swapon_all fstab.qcom
 
+service qfp-daemon /system/bin/qfp-daemon
+   class late_start
+   user system
+   group system drmrpc
+
 # Allow usb charging to be disabled peristently
 on property:persist.usb.chgdisabled=1
     write /sys/class/power_supply/battery/charging_enabled 0
