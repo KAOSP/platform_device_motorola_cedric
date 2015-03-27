@@ -59,7 +59,7 @@ media.aac_51_output_enabled=true
 mm.enable.qcom_parser=3314291
 
 # Default to AwesomePlayer
-media.stagefright.use-awesome=true
+media.stagefright.use-awesome=false
 
 #
 # system props for the data modules
@@ -106,11 +106,14 @@ persist.audio.fluence.speaker=true
 #Set for msm8952
 tunnel.audio.encode = false
 #Buffer size in kbytes for compress offload playback
-audio.offload.buffer.size.kb=240
+audio.offload.buffer.size.kb=64
 #Minimum duration for offload playback in secs
 audio.offload.min.duration.secs=30
 #Enable offload audio video playback by default
-av.offload.enable=false
+av.offload.enable=true
+
+#Enable PCM offload by default
+audio.offload.pcm.enable=true
 #enable voice path for PCM VoIP by default
 use.voice.path.for.pcm.voip=true
 
@@ -118,10 +121,7 @@ use.voice.path.for.pcm.voip=true
 ro.fm.transmitter=false
 #enable dsp gapless mode by default
 audio.offload.gapless.enabled=true
-#Audio voice concurrency related flags
-voice.playback.conc.disabled=true
-voice.record.conc.disabled=true
-voice.voip.conc.disabled=true
+
 #property to enable user to access Google WFD settings
 persist.debug.wfd.enable=1
 #property to enable VDS WFD solution
