@@ -24,6 +24,7 @@ PRODUCT_MODEL := msm8952 for arm64
 PRODUCT_BOOT_JARS += qcmediaplayer \
                      WfdCommon \
                      qcom.fmradio \
+                     tcmiface
 
 PRODUCT_BOOT_JARS += vcard
 
