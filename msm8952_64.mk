@@ -38,12 +38,14 @@ endif
 endif
 
 PRODUCT_BOOT_JARS += qcmediaplayer \
-                     WfdCommon \
-                     qcom.fmradio \
-                     tcmiface \
-                     oem-services
+                     vcard \
+                     tcmiface
+ifneq ($(strip $(QCPATH)),)
+    PRODUCT_BOOT_JARS += qcom.fmradio
+    PRODUCT_BOOT_JARS += WfdCommon
+    PRODUCT_BOOT_JARS += oem-services
+endif
 
-PRODUCT_BOOT_JARS += vcard
 
 #Android EGL implementation
 PRODUCT_PACKAGES += libGLES_android
