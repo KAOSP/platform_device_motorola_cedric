@@ -130,3 +130,7 @@ ifeq ($(strip $(TARGET_USES_QTIC)),true)
 PRODUCT_PACKAGE_OVERLAYS := $(QCPATH)/qrdplus/Extension/res-overlay \
         $(PRODUCT_PACKAGE_OVERLAYS)
 endif
+
+# Sensor HAL conf file
+ PRODUCT_COPY_FILES += \
+     device/qcom/msm8952_64/sensors/hals.conf:system/etc/sensors/hals.conf
