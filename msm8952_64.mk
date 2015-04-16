@@ -4,6 +4,9 @@ TARGET_USES_QCOM_BSP := true
 # Add QC Video Enhancements flag
 TARGET_ENABLE_QC_AV_ENHANCEMENTS := true
 
+#QTIC flag
+-include $(QCPATH)/common/config/qtic-config.mk
+
 # media_profiles and media_codecs xmls for msm8952
 ifeq ($(TARGET_ENABLE_QC_AV_ENHANCEMENTS), true)
 PRODUCT_COPY_FILES += device/qcom/msm8952_32/media/media_profiles_8952.xml:system/etc/media_profiles.xml \
