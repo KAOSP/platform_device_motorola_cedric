@@ -33,6 +33,7 @@ debug.enable.sglscale=1
 #lpa.decode=false
 #lpa.use-stagefright=true
 #persist.speaker.prot.enable=false
+qcom.hw.aac.encoder=true
 
 #
 # system props for the cne module
@@ -114,7 +115,8 @@ audio.offload.min.duration.secs=30
 av.offload.enable=true
 
 #Enable PCM offload by default
-audio.offload.pcm.enable=true
+audio.offload.pcm.16bit.enable=true
+audio.offload.pcm.24bit.enable=true
 #enable voice path for PCM VoIP by default
 use.voice.path.for.pcm.voip=true
 
@@ -142,3 +144,6 @@ persist.qfp=false
 #min/max cpu in core control
 ro.core_ctl_min_cpu=2
 ro.core_ctl_max_cpu=4
+
+#property to enable DS2 dap
+audio.dolby.ds2.enabled=true
