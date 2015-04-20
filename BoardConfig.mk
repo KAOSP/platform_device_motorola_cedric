@@ -97,3 +97,6 @@ USE_SENSOR_MULTI_HAL := true
 
 #Enable peripheral manager
 TARGET_PER_MGR_ENABLED := true
+
+#Enable HW based full disk encryption
+TARGET_HW_DISK_ENCRYPTION := true
