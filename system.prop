@@ -134,3 +134,6 @@ persist.debug.wfd.enable=1
 persist.hwc.enable_vds=1
 #property to enable narrow search range for video encoding
 vidc.enc.narrow.searchrange=1
+
+#property to enable fingerprint
+persist.qfp=false
