@@ -91,3 +91,6 @@ TARGET_INIT_VENDOR_LIB := libinit_msm
 TARGET_BOARD_SUFFIX := _64
 
 TARGET_LDPRELOAD := libNimsWrap.so
+
+# Enable sensor multi HAL
+USE_SENSOR_MULTI_HAL := true
