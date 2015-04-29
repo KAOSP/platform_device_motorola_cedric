@@ -127,6 +127,9 @@ ro.fm.transmitter=false
 #enable dsp gapless mode by default
 audio.offload.gapless.enabled=true
 
+#enable pbe effects
+audio.safx.pbe.enabled=true
+
 #Set composition for USB
 persist.sys.usb.config=diag,serial_smd,rmnet_ipa,adb
 
