@@ -129,6 +129,8 @@ audio.offload.gapless.enabled=true
 
 #enable pbe effects
 audio.safx.pbe.enabled=true
+#property for AudioSphere Post processing
+audio.pp.asphere.enabled=false
 
 #Set composition for USB
 persist.sys.usb.config=diag,serial_smd,rmnet_ipa,adb
