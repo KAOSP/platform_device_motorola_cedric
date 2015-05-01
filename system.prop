@@ -152,3 +152,6 @@ ro.core_ctl_max_cpu=4
 
 #property to enable DS2 dap
 audio.dolby.ds2.enabled=true
+
+#HWUI properties
+ro.hwui.text_large_cache_height=2048
