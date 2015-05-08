@@ -28,13 +28,6 @@ PRODUCT_DEVICE := msm8952_64
 PRODUCT_BRAND := Android
 PRODUCT_MODEL := msm8952 for arm64
 
-PRODUCT_BOOT_JARS += qcmediaplayer \
-                     WfdCommon \
-                     qcom.fmradio \
-                     tcmiface \
-                     oem-services
-
-PRODUCT_BOOT_JARS += vcard
 
 # default is nosdcard, S/W button enabled in resource
 PRODUCT_CHARACTERISTICS := nosdcard
