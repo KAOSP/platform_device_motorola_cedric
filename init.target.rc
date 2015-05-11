@@ -228,3 +228,8 @@ service adsprpcd /system/bin/adsprpcd
 
 on property:init.svc.dts_configurator=stopped
     start dtseagleservice
+
+service per_mgr /system/bin/pm-service
+    class core
+    user system
+    group system net_raw

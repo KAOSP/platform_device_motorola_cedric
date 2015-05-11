@@ -94,3 +94,6 @@ TARGET_LDPRELOAD := libNimsWrap.so
 
 # Enable sensor multi HAL
 USE_SENSOR_MULTI_HAL := true
+
+#Enable peripheral manager
+TARGET_PER_MGR_ENABLED := true
