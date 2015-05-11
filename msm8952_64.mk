@@ -13,6 +13,8 @@ PRODUCT_COPY_FILES += device/qcom/msm8952_32/media/media_profiles_8952.xml:syste
                       device/qcom/msm8952_32/media/media_codecs_8952.xml:system/etc/media_codecs.xml
 endif
 
+PRODUCT_COPY_FILES += device/qcom/msm8952_64/whitelistedapps.xml:system/etc/whitelistedapps.xml
+
 TARGET_USES_QCA_NFC := other
 
 PRODUCT_PROPERTY_OVERRIDES += \
