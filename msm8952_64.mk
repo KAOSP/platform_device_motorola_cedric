@@ -61,6 +61,7 @@ PRODUCT_COPY_FILES += \
     device/qcom/msm8952_32/sound_trigger_mixer_paths_wcd9306.xml:system/etc/sound_trigger_mixer_paths_wcd9306.xml \
     device/qcom/msm8952_32/sound_trigger_mixer_paths_wcd9330.xml:system/etc/sound_trigger_mixer_paths_wcd9330.xml \
     device/qcom/msm8952_32/sound_trigger_platform_info.xml:system/etc/sound_trigger_platform_info.xml \
+    device/qcom/msm8952_32/audio_platform_info.xml:system/etc/audio_platform_info.xml \
     device/qcom/msm8952_64/aanc_tuning_mixer.txt:system/etc/aanc_tuning_mixer.txt
 
 
