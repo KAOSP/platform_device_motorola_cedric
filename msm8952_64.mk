@@ -10,7 +10,9 @@ TARGET_ENABLE_QC_AV_ENHANCEMENTS := true
 # media_profiles and media_codecs xmls for msm8952
 ifeq ($(TARGET_ENABLE_QC_AV_ENHANCEMENTS), true)
 PRODUCT_COPY_FILES += device/qcom/msm8952_32/media/media_profiles_8952.xml:system/etc/media_profiles.xml \
-                      device/qcom/msm8952_32/media/media_codecs_8952.xml:system/etc/media_codecs.xml
+                      device/qcom/msm8952_32/media/media_profiles_8956.xml:system/etc/media_profiles_8956.xml \
+                      device/qcom/msm8952_32/media/media_codecs_8952.xml:system/etc/media_codecs.xml \
+                      device/qcom/msm8952_32/media/media_codecs_8956.xml:system/etc/media_codecs_8956.xml
 endif
 
 TARGET_USES_QCA_NFC := other
