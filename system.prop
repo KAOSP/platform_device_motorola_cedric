@@ -134,6 +134,10 @@ ro.fm.transmitter=false
 #enable dsp gapless mode by default
 audio.offload.gapless.enabled=true
 
+#multi offload
+audio.offload.multiple.enabled=true
+audio.offload.maxsessions=2
+
 #enable pbe effects
 audio.safx.pbe.enabled=true
 #property for AudioSphere Post processing
