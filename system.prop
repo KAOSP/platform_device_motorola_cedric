@@ -139,9 +139,6 @@ audio.safx.pbe.enabled=true
 #property for AudioSphere Post processing
 audio.pp.asphere.enabled=false
 
-#property for mch down sampling for clip > 48k
-audio.playback.mch.downsample=true
-
 #Set composition for USB
 persist.sys.usb.config=diag,serial_smd,rmnet_ipa,adb
 
