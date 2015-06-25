@@ -28,9 +28,18 @@ PRODUCT_DEVICE := msm8952_64
 PRODUCT_BRAND := Android
 PRODUCT_MODEL := msm8952 for arm64
 
-
 # default is nosdcard, S/W button enabled in resource
 PRODUCT_CHARACTERISTICS := nosdcard
+
+ifeq ($(strip $(TARGET_USES_QTIC)),true)
+# font rendering engine feature switch
+-include $(QCPATH)/common/config/rendering-engine.mk
+ifneq (,$(strip $(wildcard $(PRODUCT_RENDERING_ENGINE_REVLIB))))
+    MULTI_LANG_ENGINE := REVERIE
+#    MULTI_LANG_ZAWGYI := REVERIE
+endif
+endif
+
 
 #Android EGL implementation
 PRODUCT_PACKAGES += libGLES_android

@@ -20,6 +20,9 @@ BOARD_USES_GENERIC_AUDIO := true
 # 32-bit or 64-bit), the following line should be deleted
 BOARD_QTI_CAMERA_32BIT_ONLY := true
 
+# Enables CSVT
+TARGET_USES_CSVT := true
+
 NUM_FRAMEBUFFER_SURFACE_BUFFERS := 3
 TARGET_ARCH := arm64
 TARGET_ARCH_VARIANT := armv8-a
