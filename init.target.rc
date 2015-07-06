@@ -209,6 +209,7 @@ on charger
     load_all_props
     setprop persist.sys.usb.config mass_storage
     start qcom-post-boot
+    setprop persist.sys.usb.config mass_storage
 
 service dts_configurator /system/bin/dts_configurator
     class late_start
