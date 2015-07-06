@@ -45,7 +45,7 @@ TARGET_USERIMAGES_USE_EXT4 := true
 TARGET_USE_MDTP := true
 BOARD_BOOTIMAGE_PARTITION_SIZE := 0x04000000
 BOARD_RECOVERYIMAGE_PARTITION_SIZE := 0x04000000
-BOARD_SYSTEMIMAGE_PARTITION_SIZE := 1288491008
+BOARD_SYSTEMIMAGE_PARTITION_SIZE := 2684354560
 BOARD_USERDATAIMAGE_PARTITION_SIZE := 1860648960
 BOARD_CACHEIMAGE_PARTITION_SIZE := 268435456
 BOARD_CACHEIMAGE_FILE_SYSTEM_TYPE := ext4
@@ -104,3 +104,16 @@ TARGET_PER_MGR_ENABLED := true
 
 #Enable HW based full disk encryption
 TARGET_HW_DISK_ENCRYPTION := true
+
+# Enable dex pre-opt to speed up initial boot
+ifneq ($(TARGET_USES_AOSP),true)
+  ifeq ($(HOST_OS),linux)
+    ifeq ($(WITH_DEXPREOPT),)
+      WITH_DEXPREOPT := true
+      ifneq ($(TARGET_BUILD_VARIANT),user)
+        # Retain classes.dex in APK's for non-user builds
+        DEX_PREOPT_DEFAULT := nostripping
+      endif
+    endif
+  endif
+endif
