@@ -42,11 +42,6 @@ qcom.hw.aac.encoder=true
 #
 persist.cne.feature=1
 
-#
-# system props for the dpm module
-#
-persist.dpm.feature=3
-
 #system props for the MM modules
 media.stagefright.enable-player=true
 media.stagefright.enable-http=true
@@ -183,7 +178,13 @@ ro.sys.fw.use_trim_settings=true
 ro.sys.fw.empty_app_percent=50
 ro.sys.fw.trim_empty_percent=100
 ro.sys.fw.trim_cache_percent=100
-ro.sys.fw.trim_enable_memory=1073741824
+ro.sys.fw.trim_enable_memory=2147483648
 
 #Optimal dex2oat threads for faster app installation
 ro.sys.fw.dex2oat_thread_count=4
+
+# set cutoff voltage to 3200mV
+ro.cutoff_voltage_mv=3200
+
+#set device emmc size
+ro.emmc_size=16GB
