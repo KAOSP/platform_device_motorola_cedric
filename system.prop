@@ -61,7 +61,7 @@ mm.enable.qcom_parser=1048575
 media.stagefright.use-awesome=false
 #Audio voice concurrency related flags
 voice.playback.conc.disabled=true
-voice.record.conc.disabled=true
+voice.record.conc.disabled=false
 voice.voip.conc.disabled=true
 #Decides the audio fallback path during voice call, deep-buffer and fast are the two allowed fallback paths now.
 voice.conc.fallbackpath=deep-buffer
