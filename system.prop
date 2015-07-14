@@ -130,8 +130,7 @@ ro.fm.transmitter=false
 audio.offload.gapless.enabled=true
 
 #multi offload
-audio.offload.multiple.enabled=true
-audio.offload.maxsessions=2
+audio.offload.multiple.enabled=false
 
 #enable pbe effects
 audio.safx.pbe.enabled=true
