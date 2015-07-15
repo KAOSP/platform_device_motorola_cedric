@@ -20,7 +20,9 @@ PRODUCT_COPY_FILES += device/qcom/msm8952_64/whitelistedapps.xml:system/etc/whit
 TARGET_USES_QCA_NFC := other
 
 PRODUCT_PROPERTY_OVERRIDES += \
-           dalvik.vm.heapgrowthlimit=128m
+           dalvik.vm.heapgrowthlimit=128m \
+           dalvik.vm.heapminfree=4m \
+           dalvik.vm.heapstartsize=16m
 $(call inherit-product, device/qcom/common/common64.mk)
 
 PRODUCT_NAME := msm8952_64
