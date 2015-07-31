@@ -55,6 +55,9 @@ PRODUCT_PACKAGES += \
     libqcompostprocbundle \
     libqcomvoiceprocessing
 
+PRODUCT_BOOT_JARS += \
+           qcom.fmradio
+
 # Audio configuration file
 PRODUCT_COPY_FILES += \
     device/qcom/msm8952_32/audio_policy.conf:system/etc/audio_policy.conf \
