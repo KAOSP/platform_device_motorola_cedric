@@ -26,8 +26,6 @@ dalvik.vm.heapsize=36m
 dev.pm.dyn_samplingrate=1
 persist.demo.hdmirotationlock=false
 debug.enable.sglscale=1
-# disable vsync for cpu render apps
-debug.cpurend.vsync=false
 
 #ro.hdmi.enable=true
 #tunnel.decode=true
