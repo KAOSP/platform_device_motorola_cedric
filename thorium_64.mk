@@ -1,4 +1,4 @@
-DEVICE_PACKAGE_OVERLAYS := device/qcom/msm8952_64/overlay
+DEVICE_PACKAGE_OVERLAYS := device/qcom/thorium_64/overlay
 
 TARGET_USES_QCOM_BSP := true
 # Add QC Video Enhancements flag
@@ -7,15 +7,15 @@ TARGET_ENABLE_QC_AV_ENHANCEMENTS := true
 #QTIC flag
 -include $(QCPATH)/common/config/qtic-config.mk
 
-# media_profiles and media_codecs xmls for msm8952
+# media_profiles and media_codecs xmls for thorium
 ifeq ($(TARGET_ENABLE_QC_AV_ENHANCEMENTS), true)
-PRODUCT_COPY_FILES += device/qcom/msm8952_32/media/media_profiles_8952.xml:system/etc/media_profiles.xml \
-                      device/qcom/msm8952_32/media/media_profiles_8956.xml:system/etc/media_profiles_8956.xml \
-                      device/qcom/msm8952_32/media/media_codecs_8952.xml:system/etc/media_codecs.xml \
-                      device/qcom/msm8952_32/media/media_codecs_8956.xml:system/etc/media_codecs_8956.xml
+PRODUCT_COPY_FILES += device/qcom/thorium_32/media/media_profiles_thorium.xml:system/etc/media_profiles.xml \
+                      device/qcom/thorium_32/media/media_profiles_8956.xml:system/etc/media_profiles_8956.xml \
+                      device/qcom/thorium_32/media/media_codecs_thorium.xml:system/etc/media_codecs.xml \
+                      device/qcom/thorium_32/media/media_codecs_8956.xml:system/etc/media_codecs_8956.xml
 endif
 
-PRODUCT_COPY_FILES += device/qcom/msm8952_64/whitelistedapps.xml:system/etc/whitelistedapps.xml
+PRODUCT_COPY_FILES += device/qcom/thorium_64/whitelistedapps.xml:system/etc/whitelistedapps.xml
 
 TARGET_USES_QCA_NFC := other
 TARGET_USES_NQ_NFC := false
@@ -26,10 +26,10 @@ PRODUCT_PROPERTY_OVERRIDES += \
            dalvik.vm.heapstartsize=16m
 $(call inherit-product, device/qcom/common/common64.mk)
 
-PRODUCT_NAME := msm8952_64
-PRODUCT_DEVICE := msm8952_64
+PRODUCT_NAME := thorium_64
+PRODUCT_DEVICE := thorium_64
 PRODUCT_BRAND := Android
-PRODUCT_MODEL := msm8952 for arm64
+PRODUCT_MODEL := thorium for arm64
 
 PRODUCT_BOOT_JARS += tcmiface
 PRODUCT_BOOT_JARS += com.qti.dpmframework
@@ -61,29 +61,29 @@ PRODUCT_BOOT_JARS += \
 
 # Audio configuration file
 PRODUCT_COPY_FILES += \
-    device/qcom/msm8952_32/audio_policy.conf:system/etc/audio_policy.conf \
-    device/qcom/msm8952_32/audio_output_policy.conf:system/vendor/etc/audio_output_policy.conf \
-    device/qcom/msm8952_32/audio_effects.conf:system/vendor/etc/audio_effects.conf \
-    device/qcom/msm8952_32/mixer_paths_mtp.xml:system/etc/mixer_paths_mtp.xml \
-    device/qcom/msm8952_32/mixer_paths_qrd_skuh.xml:system/etc/mixer_paths_qrd_skuh.xml \
-    device/qcom/msm8952_32/mixer_paths_qrd_skui.xml:system/etc/mixer_paths_qrd_skui.xml \
-    device/qcom/msm8952_32/mixer_paths_qrd_skuhf.xml:system/etc/mixer_paths_qrd_skuhf.xml \
-    device/qcom/msm8952_32/mixer_paths_qrd_skum.xml:system/etc/mixer_paths_qrd_skum.xml \
-    device/qcom/msm8952_32/mixer_paths_wcd9330.xml:system/etc/mixer_paths_wcd9330.xml \
-    device/qcom/msm8952_32/mixer_paths_wcd9306.xml:system/etc/mixer_paths_wcd9306.xml \
-    device/qcom/msm8952_32/mixer_paths_wcd9335.xml:system/etc/mixer_paths_wcd9335.xml \
-    device/qcom/msm8952_32/mixer_paths_wcd9326.xml:system/etc/mixer_paths_wcd9326.xml \
-    device/qcom/msm8952_32/mixer_paths_qrd_skun.xml:system/etc/mixer_paths_qrd_skun.xml \
-    device/qcom/msm8952_32/mixer_paths_skuk.xml:system/etc/mixer_paths_skuk.xml \
-    device/qcom/msm8952_32/mixer_paths.xml:system/etc/mixer_paths.xml \
-    device/qcom/msm8952_32/sound_trigger_mixer_paths.xml:system/etc/sound_trigger_mixer_paths.xml \
-    device/qcom/msm8952_32/sound_trigger_mixer_paths_wcd9306.xml:system/etc/sound_trigger_mixer_paths_wcd9306.xml \
-    device/qcom/msm8952_32/sound_trigger_mixer_paths_wcd9330.xml:system/etc/sound_trigger_mixer_paths_wcd9330.xml \
-    device/qcom/msm8952_32/sound_trigger_mixer_paths_wcd9335.xml:system/etc/sound_trigger_mixer_paths_wcd9335.xml \
-    device/qcom/msm8952_32/sound_trigger_platform_info.xml:system/etc/sound_trigger_platform_info.xml \
-    device/qcom/msm8952_32/audio_platform_info.xml:system/etc/audio_platform_info.xml \
-    device/qcom/msm8952_32/audio_platform_info_extcodec.xml:system/etc/audio_platform_info_extcodec.xml \
-    device/qcom/msm8952_64/aanc_tuning_mixer.txt:system/etc/aanc_tuning_mixer.txt
+    device/qcom/thorium_32/audio_policy.conf:system/etc/audio_policy.conf \
+    device/qcom/thorium_32/audio_output_policy.conf:system/vendor/etc/audio_output_policy.conf \
+    device/qcom/thorium_32/audio_effects.conf:system/vendor/etc/audio_effects.conf \
+    device/qcom/thorium_32/mixer_paths_mtp.xml:system/etc/mixer_paths_mtp.xml \
+    device/qcom/thorium_32/mixer_paths_qrd_skuh.xml:system/etc/mixer_paths_qrd_skuh.xml \
+    device/qcom/thorium_32/mixer_paths_qrd_skui.xml:system/etc/mixer_paths_qrd_skui.xml \
+    device/qcom/thorium_32/mixer_paths_qrd_skuhf.xml:system/etc/mixer_paths_qrd_skuhf.xml \
+    device/qcom/thorium_32/mixer_paths_qrd_skum.xml:system/etc/mixer_paths_qrd_skum.xml \
+    device/qcom/thorium_32/mixer_paths_wcd9330.xml:system/etc/mixer_paths_wcd9330.xml \
+    device/qcom/thorium_32/mixer_paths_wcd9306.xml:system/etc/mixer_paths_wcd9306.xml \
+    device/qcom/thorium_32/mixer_paths_wcd9335.xml:system/etc/mixer_paths_wcd9335.xml \
+    device/qcom/thorium_32/mixer_paths_wcd9326.xml:system/etc/mixer_paths_wcd9326.xml \
+    device/qcom/thorium_32/mixer_paths_qrd_skun.xml:system/etc/mixer_paths_qrd_skun.xml \
+    device/qcom/thorium_32/mixer_paths_skuk.xml:system/etc/mixer_paths_skuk.xml \
+    device/qcom/thorium_32/mixer_paths.xml:system/etc/mixer_paths.xml \
+    device/qcom/thorium_32/sound_trigger_mixer_paths.xml:system/etc/sound_trigger_mixer_paths.xml \
+    device/qcom/thorium_32/sound_trigger_mixer_paths_wcd9306.xml:system/etc/sound_trigger_mixer_paths_wcd9306.xml \
+    device/qcom/thorium_32/sound_trigger_mixer_paths_wcd9330.xml:system/etc/sound_trigger_mixer_paths_wcd9330.xml \
+    device/qcom/thorium_32/sound_trigger_mixer_paths_wcd9335.xml:system/etc/sound_trigger_mixer_paths_wcd9335.xml \
+    device/qcom/thorium_32/sound_trigger_platform_info.xml:system/etc/sound_trigger_platform_info.xml \
+    device/qcom/thorium_32/audio_platform_info.xml:system/etc/audio_platform_info.xml \
+    device/qcom/thorium_32/audio_platform_info_extcodec.xml:system/etc/audio_platform_info_extcodec.xml \
+    device/qcom/thorium_64/aanc_tuning_mixer.txt:system/etc/aanc_tuning_mixer.txt
 
 
 #ANT+ stack
@@ -97,13 +97,13 @@ PRODUCT_PACKAGES += wcnss_service
 
 # MSM IRQ Balancer configuration file
 PRODUCT_COPY_FILES += \
-    device/qcom/msm8952_64/msm_irqbalance.conf:system/vendor/etc/msm_irqbalance.conf
+    device/qcom/thorium_64/msm_irqbalance.conf:system/vendor/etc/msm_irqbalance.conf
 
 #wlan driver
 PRODUCT_COPY_FILES += \
-    device/qcom/msm8952_64/WCNSS_qcom_cfg.ini:system/etc/wifi/WCNSS_qcom_cfg.ini \
-    device/qcom/msm8952_32/WCNSS_wlan_dictionary.dat:persist/WCNSS_wlan_dictionary.dat \
-    device/qcom/msm8952_64/WCNSS_qcom_wlan_nv.bin:persist/WCNSS_qcom_wlan_nv.bin
+    device/qcom/thorium_64/WCNSS_qcom_cfg.ini:system/etc/wifi/WCNSS_qcom_cfg.ini \
+    device/qcom/thorium_32/WCNSS_wlan_dictionary.dat:persist/WCNSS_wlan_dictionary.dat \
+    device/qcom/thorium_64/WCNSS_qcom_wlan_nv.bin:persist/WCNSS_qcom_wlan_nv.bin
 
 PRODUCT_PACKAGES += \
     wpa_supplicant_overlay.conf \
@@ -147,7 +147,7 @@ PRODUCT_COPY_FILES += \
 else
 ifeq ($(TARGET_USES_NQ_NFC),true)
 PRODUCT_PACKAGES += \
-    nfc.msm8952 \
+    nfc.thorium \
     NfcNci \
     libnfc-nci \
     libnfc_nci_jni \
@@ -164,7 +164,7 @@ PRODUCT_COPY_FILES += \
 endif # TARGET_USES_NQ_NFC
 endif # TARGET_USES_QCA_NFC
 
-# Feature definition files for msm8952
+# Feature definition files for thorium
 PRODUCT_COPY_FILES += \
     frameworks/native/data/etc/android.hardware.sensor.accelerometer.xml:system/etc/permissions/android.hardware.sensor.accelerometer.xml \
     frameworks/native/data/etc/android.hardware.sensor.compass.xml:system/etc/permissions/android.hardware.sensor.compass.xml \
@@ -189,4 +189,4 @@ endif
 
 # Sensor HAL conf file
  PRODUCT_COPY_FILES += \
-     device/qcom/msm8952_64/sensors/hals.conf:system/etc/sensors/hals.conf
+     device/qcom/thorium_64/sensors/hals.conf:system/etc/sensors/hals.conf
