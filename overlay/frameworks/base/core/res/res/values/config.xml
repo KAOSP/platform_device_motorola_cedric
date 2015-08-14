@@ -75,6 +75,14 @@
        <item>0x40C10000</item> <!-- SCHED_IDLE_LOAD resource opcode -->
        <item>0x1</item>        <!-- SCHED_IDLE_LOAD resource value -->
    </integer-array>
+   <!-- Whether cpu boost is enabled for PanelView fling -->
+   <bool name="config_enableCpuBoostForPanelViewFling">false</bool>
+   <integer-array name="panelview_flingboost_param_value">
+       <item>0x40C00000</item> <!-- SCHEDBOOST resource opcode-->
+       <item>0x1</item>        <!-- SCHEDBOOST resource value-->
+       <item>0x40800000</item> <!-- CPUBOOST_MIN_FREQ resource opcode-->
+       <item>0x514</item>      <!-- CPUBOOST MIN_FREQ resource value-->
+   </integer-array>
    <!-- Whether cpu boost is enabled for animation during exit and entry -->
    <bool name="config_enablePerfBoostForAnimation">true</bool>
    <integer name="animationboost_timeout_param">600</integer>
