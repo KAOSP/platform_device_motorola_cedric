@@ -22,7 +22,7 @@ ifeq ($(KERNEL_DEFCONFIG),)
     ifeq ($(TARGET_BUILD_VARIANT),user)
       KERNEL_DEFCONFIG := msm-perf_defconfig
     else
-      KERNEL_DEFCONFIG := msm_defconfig
+      KERNEL_DEFCONFIG := msmcortex_defconfig
     endif
 endif
 
