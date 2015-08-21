@@ -64,6 +64,8 @@
 <!--   <item>          </item>  KSMBOOST resource opcode -->
 <!--   <item>0x0</item>         KSMBOOST resource value -->
    </integer-array>
+   <!-- Whether packing disable is enabled.  -->
+   <bool name="config_disablePacking">true</bool>
    <integer name="disablepacking_timeout_param">5000</integer>
    <integer-array name="launchboost_packing_param_value">
        <item>0x40C04000</item> <!-- SCHED_PREFER_IDLE resource opcode -->
