@@ -32,7 +32,17 @@ PRODUCT_BRAND := Android
 PRODUCT_MODEL := thorium for arm64
 
 PRODUCT_BOOT_JARS += tcmiface
+
+ifneq ($(strip $(QCPATH)),)
+PRODUCT_BOOT_JARS += WfdCommon
 PRODUCT_BOOT_JARS += com.qti.dpmframework
+PRODUCT_BOOT_JARS += dpmapi
+endif
+
+ifeq ($(strip $(BOARD_HAVE_QCOM_FM)),true)
+PRODUCT_BOOT_JARS += qcom.fmradio
+endif #BOARD_HAVE_QCOM_FM
+PRODUCT_BOOT_JARS += qcmediaplayer
 
 # default is nosdcard, S/W button enabled in resource
 PRODUCT_CHARACTERISTICS := nosdcard
@@ -55,9 +65,6 @@ PRODUCT_PACKAGES += \
     libqcomvisualizer \
     libqcompostprocbundle \
     libqcomvoiceprocessing
-
-PRODUCT_BOOT_JARS += \
-           qcom.fmradio
 
 # Audio configuration file
 PRODUCT_COPY_FILES += \
