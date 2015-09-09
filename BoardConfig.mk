@@ -41,7 +41,7 @@ TARGET_CPU_CORTEX_A53 := true
 TARGET_NO_BOOTLOADER := true
 TARGET_NO_KERNEL := false
 BOOTLOADER_GCC_VERSION := arm-eabi-4.8
-BOOTLOADER_PLATFORM := thorium # use thorium LK configuration
+BOOTLOADER_PLATFORM := msm8952 # use thorium LK configuration
 MALLOC_IMPL := dlmalloc
 
 TARGET_USERIMAGES_USE_EXT4 := true
