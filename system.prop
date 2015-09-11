@@ -142,6 +142,7 @@ persist.debug.wfd.enable=1
 persist.hwc.enable_vds=1
 
 #property for vendor specific library
+ro.vendor.at_library=libqti-at.so
 ro.vendor.gt_library=libqti-gt.so
 
 #property to enable narrow search range for video encoding
