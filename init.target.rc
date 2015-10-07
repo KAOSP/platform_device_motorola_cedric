@@ -69,6 +69,7 @@ on post-fs-data
     mkdir /tombstones/dsps 0771 system system
     mkdir /persist/data/sfs 0700 system system
     mkdir /persist/data/tz 0700 system system
+    mkdir /data/misc/hbtp 0750 system system
     mkdir /data/misc/dts 0770 media audio
 
 #start camera server as daemon
@@ -217,6 +218,12 @@ on charger
     setprop persist.sys.usb.config mass_storage
     start qcom-post-boot
     setprop persist.sys.usb.config mass_storage
+
+service hbtp /system/vendor/bin/hbtp_daemon
+    class main
+    user system
+    group system
+    disabled
 
 service dts_configurator /system/bin/dts_configurator
     class late_start
