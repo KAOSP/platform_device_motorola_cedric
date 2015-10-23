@@ -82,6 +82,8 @@ PRODUCT_COPY_FILES += \
     device/qcom/msm8937_32/mixer_paths_wcd9335.xml:system/etc/mixer_paths_wcd9335.xml \
     device/qcom/msm8937_32/mixer_paths_wcd9326.xml:system/etc/mixer_paths_wcd9326.xml \
     device/qcom/msm8937_32/mixer_paths_qrd_skun.xml:system/etc/mixer_paths_qrd_skun.xml \
+    device/qcom/msm8937_32/mixer_paths_qrd_sku1.xml:system/etc/mixer_paths_qrd_sku1.xml \
+    device/qcom/msm8937_32/mixer_paths_qrd_sku2.xml:system/etc/mixer_paths_qrd_sku2.xml \
     device/qcom/msm8937_32/mixer_paths_skuk.xml:system/etc/mixer_paths_skuk.xml \
     device/qcom/msm8937_32/mixer_paths.xml:system/etc/mixer_paths.xml \
     device/qcom/msm8937_32/sound_trigger_mixer_paths.xml:system/etc/sound_trigger_mixer_paths.xml \
