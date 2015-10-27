@@ -135,12 +135,6 @@ audio.safx.pbe.enabled=true
 #property for AudioSphere Post processing
 audio.pp.asphere.enabled=false
 
-#Set composition for USB
-persist.sys.usb.config=diag,serial_smd,rmnet_ipa,adb
-
-#Set read only default composition for USB
-ro.sys.usb.default.config=diag,serial_smd,rmnet_ipa,adb
-
 #property to enable user to access Google WFD settings
 persist.debug.wfd.enable=1
 #property to enable VDS WFD solution
