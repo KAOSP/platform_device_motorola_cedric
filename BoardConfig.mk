@@ -102,6 +102,9 @@ TARGET_BOARD_SUFFIX := _64
 
 TARGET_LDPRELOAD := libNimsWrap.so
 
+#Enable SSC Feature
+TARGET_USES_SSC := true
+
 # Enable sensor multi HAL
 USE_SENSOR_MULTI_HAL := true
 
