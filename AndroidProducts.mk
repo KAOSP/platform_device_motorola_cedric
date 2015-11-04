@@ -1,2 +1,2 @@
 PRODUCT_MAKEFILES := \
-    $(LOCAL_DIR)/thorium_64.mk
+    $(LOCAL_DIR)/msm8937_64.mk

@@ -1,5 +1,5 @@
 #
-# system.prop for thorium
+# system.prop for msm8937
 #
 
 rild.libpath=/vendor/lib64/libril-qc-qmi-1.so
@@ -107,7 +107,7 @@ ro.qc.sdk.audio.fluencetype=none
 persist.audio.fluence.voicecall=true
 persist.audio.fluence.voicerec=false
 persist.audio.fluence.speaker=true
-#Set for thorium
+#Set for msm8937
 tunnel.audio.encode = false
 #Buffer size in kbytes for compress offload playback
 audio.offload.buffer.size.kb=64
