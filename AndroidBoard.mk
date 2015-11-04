@@ -20,9 +20,9 @@ endif
 #----------------------------------------------------------------------
 ifeq ($(KERNEL_DEFCONFIG),)
     ifeq ($(TARGET_BUILD_VARIANT),user)
-      KERNEL_DEFCONFIG := msm-perf_defconfig
+      KERNEL_DEFCONFIG := msm8937-perf_defconfig
     else
-      KERNEL_DEFCONFIG := msmcortex_defconfig
+      KERNEL_DEFCONFIG := msm8937_defconfig
     endif
 endif
 
