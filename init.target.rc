@@ -35,6 +35,9 @@ on early-init
     symlink /data/tombstones /tombstones
     mkdir /dsp 0771 media media
 
+on post-fs
+    export LD_PRELOAD libNimsWrap.so
+
 on fs
     wait /dev/block/platform/soc.0/7824900.sdhci/mmcblk0
     symlink /dev/block/platform/soc.0/7824900.sdhci /dev/block/bootdevice
