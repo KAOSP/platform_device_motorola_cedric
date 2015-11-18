@@ -54,6 +54,12 @@ mm.enable.qcom_parser=1048575
 swvenc.mpeg4.num_hthreads=4
 swvenc.mpeg4.batch_size=2
 
+# system property to accelerate Progressive Download using STA
+persist.mm.sta.enable=0
+
+# Set default power mode to low power for encoder
+vidc.debug.perf.mode=2
+
 #Audio voice concurrency related flags
 voice.playback.conc.disabled=true
 voice.record.conc.disabled=false
