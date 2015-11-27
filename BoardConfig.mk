@@ -115,10 +115,8 @@ USE_SENSOR_MULTI_HAL := true
 TARGET_PER_MGR_ENABLED := true
 
 #Enable HW based full disk encryption
-TARGET_HW_DISK_ENCRYPTION := false
-
-#Enable SW based full disk encryption
-TARGET_SWV8_DISK_ENCRYPTION := true
+TARGET_HW_DISK_ENCRYPTION := true
+TARGET_CRYPTFS_HW_PATH := device/qcom/common/cryptfs_hw
 
 TARGET_FORCE_HWC_FOR_VIRTUAL_DISPLAYS := true
 
