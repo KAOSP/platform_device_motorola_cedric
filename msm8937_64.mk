@@ -200,3 +200,6 @@ endif
 # Sensor HAL conf file
  PRODUCT_COPY_FILES += \
      device/qcom/msm8937_64/sensors/hals.conf:system/etc/sensors/hals.conf
+
+PRODUCT_SUPPORTS_VERITY := true
+PRODUCT_SYSTEM_VERITY_PARTITION := /dev/block/bootdevice/by-name/system
