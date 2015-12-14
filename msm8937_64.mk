@@ -22,9 +22,9 @@ TARGET_USES_QCA_NFC := other
 TARGET_USES_NQ_NFC := false
 
 PRODUCT_PROPERTY_OVERRIDES += \
-           dalvik.vm.heapgrowthlimit=128m \
            dalvik.vm.heapminfree=4m \
            dalvik.vm.heapstartsize=16m
+$(call inherit-product, frameworks/native/build/phone-xhdpi-2048-dalvik-heap.mk)
 $(call inherit-product, device/qcom/common/common64.mk)
 
 PRODUCT_NAME := msm8937_64
@@ -95,6 +95,9 @@ PRODUCT_COPY_FILES += \
     device/qcom/msm8937_32/audio_platform_info_extcodec.xml:system/etc/audio_platform_info_extcodec.xml \
     device/qcom/msm8937_64/aanc_tuning_mixer.txt:system/etc/aanc_tuning_mixer.txt
 
+# MIDI feature
+PRODUCT_COPY_FILES += \
+    frameworks/native/data/etc/android.software.midi.xml:system/etc/permissions/android.software.midi.xml
 
 #ANT+ stack
 PRODUCT_PACKAGES += \
@@ -203,3 +206,11 @@ endif
 
 PRODUCT_SUPPORTS_VERITY := true
 PRODUCT_SYSTEM_VERITY_PARTITION := /dev/block/bootdevice/by-name/system
+
+# Reduce client buffer size for fast audio output tracks
+PRODUCT_PROPERTY_OVERRIDES += \
+     af.fast_track_multiplier=1
+
+# Low latency audio buffer size in frames
+PRODUCT_PROPERTY_OVERRIDES += \
+    audio_hal.period_size=192
