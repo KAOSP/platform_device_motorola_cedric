@@ -4,7 +4,7 @@ TARGET_USES_QCOM_BSP := true
 BOARD_HAVE_QCOM_FM := true
 # Add QC Video Enhancements flag
 TARGET_ENABLE_QC_AV_ENHANCEMENTS := true
-TARGET_USES_NQ_NFC := false
+TARGET_USES_NQ_NFC := true
 
 #QTIC flag
 -include $(QCPATH)/common/config/qtic-config.mk
