@@ -33,7 +33,7 @@ debug.gralloc.enable_fb_ubwc=1
 #tunnel.audiovideo.decode=true
 #lpa.decode=false
 #lpa.use-stagefright=true
-#persist.speaker.prot.enable=false
+persist.speaker.prot.enable=false
 qcom.hw.aac.encoder=true
 
 #
