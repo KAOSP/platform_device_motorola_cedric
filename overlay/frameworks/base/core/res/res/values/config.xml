@@ -61,6 +61,8 @@
        <item>0x1</item>        <!-- DISABLE_POWER_COLLAPSE resource value-->
        <item>0x41000000</item> <!-- Minimum number of cores online resource opcode-->
        <item>0x4</item>        <!-- Minimum number of cores online resource value-->
+       <item>0x42804000</item> <!-- GPU_MIN_PWRLVL resource opcode-->
+       <item>0x1</item>        <!-- GPU_MIN_PWRLVL resource value-->
 <!--   <item>          </item>  KSMBOOST resource opcode -->
 <!--   <item>0x0</item>         KSMBOOST resource value -->
    </integer-array>
@@ -83,6 +85,8 @@
        <item>0x1</item>        <!-- SCHEDBOOST resource value-->
        <item>0x40800000</item> <!-- CPUBOOST_MIN_FREQ resource opcode-->
        <item>0x44C</item>      <!-- CPUBOOST MIN_FREQ resource value-->
+       <item>0x42804000</item> <!-- GPU_MIN_PWRLVL resource opcode-->
+       <item>0x1</item>        <!-- GPU_MIN_PWRLVL resource value-->
    </integer-array>
    <!-- Indicate whether to allow the device to suspend when the screen is off
    due to the proximity sensor.  This resource should only be set to true
