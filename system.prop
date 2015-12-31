@@ -27,13 +27,14 @@ dev.pm.dyn_samplingrate=1
 persist.demo.hdmirotationlock=false
 debug.enable.sglscale=1
 debug.gralloc.enable_fb_ubwc=1
+persist.hwc.blit.comp=1
 
 #ro.hdmi.enable=true
 #tunnel.decode=true
 #tunnel.audiovideo.decode=true
 #lpa.decode=false
 #lpa.use-stagefright=true
-#persist.speaker.prot.enable=false
+persist.speaker.prot.enable=false
 qcom.hw.aac.encoder=true
 
 #
