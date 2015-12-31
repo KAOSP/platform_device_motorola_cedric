@@ -108,6 +108,9 @@ TARGET_USES_SSC := true
 #Enabling IMS Feature
 TARGET_USES_IMS := TRUE
 
+#PCI RCS
+TARGET_USES_PCI_RCS := true
+
 # Enable sensor multi HAL
 USE_SENSOR_MULTI_HAL := true
 
