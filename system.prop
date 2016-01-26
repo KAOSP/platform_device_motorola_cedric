@@ -211,3 +211,7 @@ ro.cutoff_voltage_mv=3200
 
 #set device emmc size
 ro.emmc_size=16GB
+
+#properties for limiting preview size in camera
+camera.display.umax=1920x1080
+camera.display.lmax=1280x720
