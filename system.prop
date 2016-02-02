@@ -168,6 +168,9 @@ persist.debug.wfd.enable=1
 #property to enable VDS WFD solution
 persist.hwc.enable_vds=1
 
+#selects CoreSight configuration to enable
+persist.debug.coresight.config=stm-events
+
 #property for vendor specific library
 ro.vendor.at_library=libqti-at.so
 ro.vendor.gt_library=libqti-gt.so
