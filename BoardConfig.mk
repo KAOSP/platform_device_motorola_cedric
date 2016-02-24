@@ -4,7 +4,8 @@
 #
 
 TARGET_BOARD_PLATFORM := msm8937
-TARGET_BOOTLOADER_BOARD_NAME := msm8937
+# This value will be shown on fastboot menu
+TARGET_BOOTLOADER_BOARD_NAME := QC_Reference_Phone
 
 TARGET_COMPILE_WITH_MSM_KERNEL := true
 TARGET_KERNEL_APPEND_DTB := true
