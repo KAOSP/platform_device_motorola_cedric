@@ -40,6 +40,7 @@ on post-fs
 
 on fs
     wait /dev/block/bootdevice
+    write /proc/sys/vm/swappiness 100
 
     mount_all fstab.qcom
 
@@ -86,11 +87,6 @@ service qcamerasvr /system/bin/mm-qcamera-daemon
 on init
    write /sys/module/qpnp_rtc/parameters/poweron_alarm 1
 
-#enable zram
-on property:ro.config.zram=true
-    swapon_all fstab.qcom
-    write /proc/sys/vm/swappiness 100
-
 service qfp-daemon /system/bin/qfp-daemon
    class late_start
    user system
@@ -132,6 +128,13 @@ service perfd /system/vendor/bin/perfd
    class main
    user root
    disabled
+
+service gamed /system/vendor/bin/gamed
+   class main
+   user system
+   group system
+   disabled
+   socket gamed seqpacket 0640 system system
 
 service thermal-engine /system/vendor/bin/thermal-engine
    class main
