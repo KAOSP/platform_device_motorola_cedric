@@ -62,38 +62,8 @@ endif
 #Android EGL implementation
 PRODUCT_PACKAGES += libGLES_android
 
-PRODUCT_PACKAGES += \
-    libqcomvisualizer \
-    libqcompostprocbundle \
-    libqcomvoiceprocessing
-
 # Audio configuration file
-PRODUCT_COPY_FILES += \
-    device/qcom/msm8937_32/audio_policy.conf:system/etc/audio_policy.conf \
-    device/qcom/msm8937_32/audio_output_policy.conf:system/vendor/etc/audio_output_policy.conf \
-    device/qcom/msm8937_32/audio_effects.conf:system/vendor/etc/audio_effects.conf \
-    device/qcom/msm8937_32/mixer_paths_mtp.xml:system/etc/mixer_paths_mtp.xml \
-    device/qcom/msm8937_32/mixer_paths_qrd_skuh.xml:system/etc/mixer_paths_qrd_skuh.xml \
-    device/qcom/msm8937_32/mixer_paths_qrd_skui.xml:system/etc/mixer_paths_qrd_skui.xml \
-    device/qcom/msm8937_32/mixer_paths_qrd_skuhf.xml:system/etc/mixer_paths_qrd_skuhf.xml \
-    device/qcom/msm8937_32/mixer_paths_qrd_skum.xml:system/etc/mixer_paths_qrd_skum.xml \
-    device/qcom/msm8937_32/mixer_paths_wcd9330.xml:system/etc/mixer_paths_wcd9330.xml \
-    device/qcom/msm8937_32/mixer_paths_wcd9306.xml:system/etc/mixer_paths_wcd9306.xml \
-    device/qcom/msm8937_32/mixer_paths_wcd9335.xml:system/etc/mixer_paths_wcd9335.xml \
-    device/qcom/msm8937_32/mixer_paths_wcd9326.xml:system/etc/mixer_paths_wcd9326.xml \
-    device/qcom/msm8937_32/mixer_paths_qrd_skun.xml:system/etc/mixer_paths_qrd_skun.xml \
-    device/qcom/msm8937_32/mixer_paths_qrd_sku1.xml:system/etc/mixer_paths_qrd_sku1.xml \
-    device/qcom/msm8937_32/mixer_paths_qrd_sku2.xml:system/etc/mixer_paths_qrd_sku2.xml \
-    device/qcom/msm8937_32/mixer_paths_skuk.xml:system/etc/mixer_paths_skuk.xml \
-    device/qcom/msm8937_32/mixer_paths.xml:system/etc/mixer_paths.xml \
-    device/qcom/msm8937_32/sound_trigger_mixer_paths.xml:system/etc/sound_trigger_mixer_paths.xml \
-    device/qcom/msm8937_32/sound_trigger_mixer_paths_wcd9306.xml:system/etc/sound_trigger_mixer_paths_wcd9306.xml \
-    device/qcom/msm8937_32/sound_trigger_mixer_paths_wcd9330.xml:system/etc/sound_trigger_mixer_paths_wcd9330.xml \
-    device/qcom/msm8937_32/sound_trigger_mixer_paths_wcd9335.xml:system/etc/sound_trigger_mixer_paths_wcd9335.xml \
-    device/qcom/msm8937_32/sound_trigger_platform_info.xml:system/etc/sound_trigger_platform_info.xml \
-    device/qcom/msm8937_32/audio_platform_info.xml:system/etc/audio_platform_info.xml \
-    device/qcom/msm8937_32/audio_platform_info_extcodec.xml:system/etc/audio_platform_info_extcodec.xml \
-    device/qcom/msm8937_64/aanc_tuning_mixer.txt:system/etc/aanc_tuning_mixer.txt
+-include $(TOPDIR)hardware/qcom/audio/configs/msm8937/msm8937.mk
 
 # MIDI feature
 PRODUCT_COPY_FILES += \
@@ -186,10 +156,3 @@ endif
 PRODUCT_SUPPORTS_VERITY := true
 PRODUCT_SYSTEM_VERITY_PARTITION := /dev/block/bootdevice/by-name/system
 
-# Reduce client buffer size for fast audio output tracks
-PRODUCT_PROPERTY_OVERRIDES += \
-     af.fast_track_multiplier=1
-
-# Low latency audio buffer size in frames
-PRODUCT_PROPERTY_OVERRIDES += \
-    audio_hal.period_size=192
