@@ -35,14 +35,15 @@ TARGET_2ND_ARCH_VARIANT := armv7-a-neon
 TARGET_2ND_CPU_ABI := armeabi-v7a
 TARGET_2ND_CPU_ABI2 := armeabi
 TARGET_2ND_CPU_VARIANT := cortex-a53
-
+USE_CLANG_PLATFORM_BUILD := true
 TARGET_CPU_CORTEX_A53 := true
 
 TARGET_NO_BOOTLOADER := false
 TARGET_NO_KERNEL := false
 BOOTLOADER_GCC_VERSION := arm-eabi-4.8
 BOOTLOADER_PLATFORM := msm8952 # use msm8937 LK configuration
-MALLOC_IMPL := dlmalloc
+#MALLOC_IMPL := dlmalloc
+MALLOC_SVELTE := true
 
 TARGET_USERIMAGES_USE_EXT4 := true
 TARGET_USE_MDTP := true
@@ -68,8 +69,8 @@ TARGET_USES_NEW_ION_API :=true
 TARGET_USES_QCOM_BSP := true
 TARGET_NO_RPC := true
 
-BOARD_KERNEL_CMDLINE := console=ttyHSL0,115200,n8 androidboot.console=ttyHSL0 androidboot.hardware=qcom msm_rtb.filter=0x237 ehci-hcd.park=3 lpm_levels.sleep_disabled=1 androidboot.bootdevice=7824900.sdhci earlycon=msm_hsl_uart,0x78B0000
-BOARD_KERNEL_SEPARATED_DT := true
+BOARD_KERNEL_CMDLINE := console=ttyHSL0,115200,n8 androidboot.console=ttyHSL0 androidboot.hardware=qcom msm_rtb.filter=0x237 ehci-hcd.park=3 lpm_levels.sleep_disabled=1 androidboot.bootdevice=7824900.sdhci earlycon=msm_hsl_uart,0x78B0000 androidboot.selinux=permissive
+#BOARD_KERNEL_SEPARATED_DT := true
 
 BOARD_KERNEL_BASE        := 0x80000000
 BOARD_KERNEL_PAGESIZE    := 2048
@@ -119,7 +120,7 @@ USE_SENSOR_MULTI_HAL := true
 TARGET_PER_MGR_ENABLED := true
 
 #Enable HW based full disk encryption
-TARGET_HW_DISK_ENCRYPTION := true
+TARGET_HW_DISK_ENCRYPTION := false
 TARGET_CRYPTFS_HW_PATH := device/qcom/common/cryptfs_hw
 
 TARGET_FORCE_HWC_FOR_VIRTUAL_DISPLAYS := true
@@ -140,4 +141,4 @@ endif
 
 FEATURE_QCRIL_UIM_SAP_SERVER_MODE := true
 
-BOARD_HAL_STATIC_LIBRARIES := libhealthd.msm
+#BOARD_HAL_STATIC_LIBRARIES := libhealthd.msm

@@ -1,11 +1,11 @@
-DEVICE_PACKAGE_OVERLAYS := device/qcom/msm8937_64/overlay
+#DEVICE_PACKAGE_OVERLAYS := device/qcom/msm8937_64/overlay
 
 TARGET_USES_QCOM_BSP := true
-BOARD_HAVE_QCOM_FM := true
+#BOARD_HAVE_QCOM_FM := true
 # Add QC Video Enhancements flag
-TARGET_ENABLE_QC_AV_ENHANCEMENTS := true
-TARGET_USES_NQ_NFC := true
-
+TARGET_ENABLE_QC_AV_ENHANCEMENTS := false
+TARGET_USES_NQ_NFC := false
+TARGET_USES_QTIC := false
 #QTIC flag
 -include $(QCPATH)/common/config/qtic-config.mk
 
@@ -35,15 +35,15 @@ PRODUCT_BOOT_JARS += tcmiface
 
 ifneq ($(strip $(QCPATH)),)
 PRODUCT_BOOT_JARS += WfdCommon
-PRODUCT_BOOT_JARS += com.qti.dpmframework
-PRODUCT_BOOT_JARS += dpmapi
-PRODUCT_BOOT_JARS += com.qti.location.sdk
+#PRODUCT_BOOT_JARS += com.qti.dpmframework
+#PRODUCT_BOOT_JARS += dpmapi
+#PRODUCT_BOOT_JARS += com.qti.location.sdk
 endif
 
 ifeq ($(strip $(BOARD_HAVE_QCOM_FM)),true)
 PRODUCT_BOOT_JARS += qcom.fmradio
 endif #BOARD_HAVE_QCOM_FM
-PRODUCT_BOOT_JARS += qcmediaplayer
+#PRODUCT_BOOT_JARS += qcmediaplayer
 
 # default is nosdcard, S/W button enabled in resource
 PRODUCT_CHARACTERISTICS := nosdcard
@@ -141,7 +141,7 @@ PRODUCT_COPY_FILES += \
 ADDITIONAL_BUILD_PROPERTIES += persist.nfc.smartcard.config=SIM1,SIM2,eSE1
 endif # TARGET_USES_NQ_NFC
 
-PRODUCT_PACKAGES += wcnss_service
+#PRODUCT_PACKAGES += wcnss_service
 
 # MSM IRQ Balancer configuration file
 PRODUCT_COPY_FILES += \

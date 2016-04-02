@@ -26,8 +26,8 @@ ifeq ($(KERNEL_DEFCONFIG),)
     endif
 endif
 
-include kernel/AndroidKernel.mk
-
+#include kernel/AndroidKernel.mk
+include kernel/msm-3.18/AndroidKernel.mk
 $(INSTALLED_KERNEL_TARGET): $(TARGET_PREBUILT_KERNEL) | $(ACP)
 	$(transform-prebuilt-to-target)
 
