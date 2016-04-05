@@ -63,6 +63,8 @@
        <item>0x4</item>        <!-- Minimum number of cores online resource value-->
        <item>0x42804000</item> <!-- GPU_MIN_PWRLVL resource opcode-->
        <item>0x1</item>        <!-- GPU_MIN_PWRLVL resource value-->
+       <item>0x42C0C000</item> <!-- SWAP_RATIO resource opcode-->
+       <item>0x64</item>       <!-- SWAP_RATIO resource value-->
 <!--   <item>          </item>  KSMBOOST resource opcode -->
 <!--   <item>0x0</item>         KSMBOOST resource value -->
    </integer-array>
