@@ -6,6 +6,8 @@ TARGET_USES_QCOM_BSP := true
 TARGET_ENABLE_QC_AV_ENHANCEMENTS := false
 TARGET_USES_NQ_NFC := false
 TARGET_USES_QTIC := false
+TARGET_KERNEL_VERSION := 3.18
+
 #QTIC flag
 -include $(QCPATH)/common/config/qtic-config.mk
 
@@ -18,7 +20,8 @@ PRODUCT_COPY_FILES += device/qcom/msm8937_32/media/media_profiles_8937.xml:syste
                       device/qcom/msm8937_32/media/media_codecs_performance_8937.xml:system/etc/media_codecs_performance.xml
 endif
 
-PRODUCT_COPY_FILES += device/qcom/msm8937_64/whitelistedapps.xml:system/etc/whitelistedapps.xml
+PRODUCT_COPY_FILES += device/qcom/msm8937_64/whitelistedapps.xml:system/etc/whitelistedapps.xml \
+                      device/qcom/msm8937_64/gamedwhitelist.xml:system/etc/gamedwhitelist.xml
 
 PRODUCT_PROPERTY_OVERRIDES += \
            dalvik.vm.heapminfree=4m \

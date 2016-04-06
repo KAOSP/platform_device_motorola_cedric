@@ -49,10 +49,6 @@ media.aac_51_output_enabled=true
 #codecs:(PARSER_)AAC AC3 AMR_NB AMR_WB ASF AVI DTS FLV 3GP 3G2 MKV MP2PS MP2TS MP3 OGG QCP WAV FLAC AIFF APE
 mm.enable.qcom_parser=1048575
 
-# system props for software encoder
-swvenc.mpeg4.num_hthreads=4
-swvenc.mpeg4.batch_size=2
-
 # system prop for UBWC
 video.disable.ubwc=1
 
@@ -175,6 +171,9 @@ persist.debug.coresight.config=stm-events
 ro.vendor.at_library=libqti-at.so
 ro.vendor.gt_library=libqti-gt.so
 
+#property for game detection feature
+debug.enable.gamed=0
+
 #property to enable narrow search range for video encoding
 vidc.enc.narrow.searchrange=1
 
@@ -218,6 +217,12 @@ ro.am.reschedule_service=true
 
 #Optimal dex2oat threads for faster app installation
 ro.sys.fw.dex2oat_thread_count=4
+
+# Create zram disk
+ro.config.zram=true
+
+# Create Swap disk, if below sys-prop enabled & also if device has lower (< 1 GB) RAM
+ro.config.swap=true
 
 # set cutoff voltage to 3200mV
 ro.cutoff_voltage_mv=3200
