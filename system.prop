@@ -29,12 +29,6 @@ debug.enable.sglscale=1
 
 #ro.hdmi.enable=true
 #tunnel.decode=true
-#tunnel.audiovideo.decode=true
-#lpa.decode=false
-#lpa.use-stagefright=true
-persist.speaker.prot.enable=false
-qcom.hw.aac.encoder=true
-
 #
 # system props for the cne module
 #
@@ -59,15 +53,6 @@ video.disable.ubwc=1
 # system property to accelerate Progressive Download using STA
 persist.mm.sta.enable=0
 
-#Audio voice concurrency related flags
-voice.playback.conc.disabled=true
-voice.record.conc.disabled=false
-voice.voip.conc.disabled=true
-#Decides the audio fallback path during voice call, deep-buffer and fast are the two allowed fallback paths now.
-voice.conc.fallbackpath=deep-buffer
-
-#parser input buffer size(256kb) in byte stream mode
-audio.parser.ip.buffer.size=262144
 
 #
 # system props for the camera
@@ -112,56 +97,8 @@ bluetooth.hfp.client=1
 #
 persist.fuse_sdcard=true
 
-#
-#snapdragon value add features
-#
-ro.qc.sdk.audio.ssr=false
-##fluencetype can be "fluence" or "fluencepro" or "none"
-ro.qc.sdk.audio.fluencetype=none
-persist.audio.fluence.voicecall=true
-persist.audio.fluence.voicerec=false
-persist.audio.fluence.speaker=true
-#Set for msm8937
-tunnel.audio.encode = false
-#Buffer size in kbytes for compress offload playback
-audio.offload.buffer.size.kb=64
-#Minimum duration for offload playback in secs
-audio.offload.min.duration.secs=30
-#Enable offload audio video playback by default
-audio.offload.video=true
-
-#Enable PCM offload by default
-audio.offload.pcm.16bit.enable=true
-audio.offload.pcm.24bit.enable=true
-
-#Enable audio track offload by default
-audio.offload.track.enable=true
-
-#Enable music through deep buffer
-audio.deep_buffer.media=true
-
-#enable downsampling for multi-channel content > 48Khz
-audio.playback.mch.downsample=true
-
-#enable voice path for PCM VoIP by default
-use.voice.path.for.pcm.voip=true
-
-#enable software decoders for ALAC and APE.
-use.qti.sw.alac.decoder=true
-use.qti.sw.ape.decoder=true
-
 #System property for FM transmitter
 ro.fm.transmitter=false
-#enable dsp gapless mode by default
-audio.offload.gapless.enabled=true
-
-#multi offload
-audio.offload.multiple.enabled=false
-
-#enable pbe effects
-audio.safx.pbe.enabled=true
-#property for AudioSphere Post processing
-audio.pp.asphere.enabled=false
 
 #property to enable user to access Google WFD settings
 persist.debug.wfd.enable=1
@@ -184,9 +121,6 @@ persist.qfp=false
 #min/max cpu in core control
 ro.core_ctl_min_cpu=2
 ro.core_ctl_max_cpu=4
-
-#property to enable DS2 dap
-audio.dolby.ds2.enabled=true
 
 #HWUI properties
 ro.hwui.texture_cache_size=72
