@@ -117,7 +117,7 @@ PRODUCT_COPY_FILES += \
 ADDITIONAL_BUILD_PROPERTIES += persist.nfc.smartcard.config=SIM1,SIM2,eSE1
 endif # TARGET_USES_NQ_NFC
 
-#PRODUCT_PACKAGES += wcnss_service
+PRODUCT_PACKAGES += wcnss_service
 
 # MSM IRQ Balancer configuration file
 PRODUCT_COPY_FILES += \
