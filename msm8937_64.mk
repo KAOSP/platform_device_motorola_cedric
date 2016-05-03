@@ -46,9 +46,9 @@ PRODUCT_BOOT_JARS += WfdCommon
 #PRODUCT_BOOT_JARS += com.qti.location.sdk
 endif
 
-ifeq ($(strip $(BOARD_HAVE_QCOM_FM)),true)
+#ifeq ($(strip$(BOARD_HAVE_QCOM_FM)),true)
 PRODUCT_BOOT_JARS += qcom.fmradio
-endif #BOARD_HAVE_QCOM_FM
+#endif #BOARD_HAVE_QCOM_FM
 #PRODUCT_BOOT_JARS += qcmediaplayer
 
 # default is nosdcard, S/W button enabled in resource
