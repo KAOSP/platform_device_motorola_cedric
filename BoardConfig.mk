@@ -113,7 +113,7 @@ TARGET_USES_SSC := true
 TARGET_USES_IMS := TRUE
 
 #PCI RCS
-TARGET_USES_PCI_RCS := true
+TARGET_USES_PCI_RCS := false
 
 # Enable sensor multi HAL
 USE_SENSOR_MULTI_HAL := true
