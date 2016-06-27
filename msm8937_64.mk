@@ -4,7 +4,7 @@ TARGET_USES_QCOM_BSP := true
 #BOARD_HAVE_QCOM_FM := true
 # Add QC Video Enhancements flag
 TARGET_ENABLE_QC_AV_ENHANCEMENTS := true
-TARGET_USES_NQ_NFC := false
+TARGET_USES_NQ_NFC := true
 TARGET_KERNEL_VERSION := 3.18
 
 #QTIC flag
