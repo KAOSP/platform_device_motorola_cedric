@@ -1,4 +1,4 @@
-#DEVICE_PACKAGE_OVERLAYS := device/qcom/msm8937_64/overlay
+DEVICE_PACKAGE_OVERLAYS := device/qcom/msm8937_64/overlay
 
 TARGET_USES_QCOM_BSP := true
 #BOARD_HAVE_QCOM_FM := true
