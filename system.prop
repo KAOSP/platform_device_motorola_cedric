@@ -109,6 +109,9 @@ persist.hwc.enable_vds=1
 #selects CoreSight configuration to enable
 persist.debug.coresight.config=stm-events
 
+#selects Console configuration to enable
+persist.console.silent.config=1
+
 #property for vendor specific library
 ro.vendor.at_library=libqti-at.so
 ro.vendor.gt_library=libqti-gt.so
