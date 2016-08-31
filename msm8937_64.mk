@@ -120,6 +120,10 @@ PRODUCT_LOCALES += th_TH vi_VN tl_PH hi_IN ar_EG ru_RU tr_TR pt_BR bn_IN mr_IN t
 PRODUCT_PACKAGE_OVERLAYS := $(QCPATH)/qrdplus/Extension/res \
         $(PRODUCT_PACKAGE_OVERLAYS)
 
+#for android_filesystem_config.h
+PRODUCT_PACKAGES += \
+    fs_config_files
+
 # Sensor HAL conf file
  PRODUCT_COPY_FILES += \
      device/qcom/msm8937_64/sensors/hals.conf:system/etc/sensors/hals.conf
