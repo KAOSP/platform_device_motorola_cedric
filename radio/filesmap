@@ -39,6 +39,7 @@ lksecapp.mbn            /dev/block/bootdevice/by-name/lksecapp
 cmnlib.mbn              /dev/block/bootdevice/by-name/cmnlib
 cmnlib64.mbn            /dev/block/bootdevice/by-name/cmnlib64
 keymaster.mbn           /dev/block/bootdevice/by-name/keymaster
+mdtp.img                /dev/block/bootdevice/by-name/mdtp
 
 # filename + .bak       backup partition
 
