@@ -1,17 +1,22 @@
-DEVICE_PACKAGE_OVERLAYS := device/qcom/msm8937_64/overlay
+TARGET_USES_AOSP := true
+TARGET_USES_QCOM_BSP := false
 
-TARGET_USES_QCOM_BSP := true
-#BOARD_HAVE_QCOM_FM := true
-# Add QC Video Enhancements flag
+ifeq ($(TARGET_USES_AOSP),true)
+TARGET_ENABLE_QC_AV_ENHANCEMENTS := false
+TARGET_USES_QTIC := false
+else
+DEVICE_PACKAGE_OVERLAYS := device/qcom/msm8937_64/overlay
 TARGET_ENABLE_QC_AV_ENHANCEMENTS := true
-TARGET_USES_NQ_NFC := true
+TARGET_USES_QTIC := true
+-include $(QCPATH)/common/config/qtic-config.mk
+endif
+
+#BOARD_HAVE_QCOM_FM := true
+TARGET_USES_NQ_NFC := false
 TARGET_KERNEL_VERSION := 3.18
 
-#QTIC flag
--include $(QCPATH)/common/config/qtic-config.mk
-
 # Enable features in video HAL that can compile only on this platform
-TARGET_USES_MEDIA_EXTENSIONS := true
+TARGET_USES_MEDIA_EXTENSIONS := false
 
 # media_profiles and media_codecs xmls for msm8937
 ifeq ($(TARGET_ENABLE_QC_AV_ENHANCEMENTS), true)
@@ -36,10 +41,10 @@ PRODUCT_DEVICE := msm8937_64
 PRODUCT_BRAND := Android
 PRODUCT_MODEL := msm8937 for arm64
 
-PRODUCT_BOOT_JARS += tcmiface
+#PRODUCT_BOOT_JARS += tcmiface
 
 ifneq ($(strip $(QCPATH)),)
-PRODUCT_BOOT_JARS += WfdCommon
+#PRODUCT_BOOT_JARS += WfdCommon
 #PRODUCT_BOOT_JARS += com.qti.dpmframework
 #PRODUCT_BOOT_JARS += dpmapi
 #PRODUCT_BOOT_JARS += com.qti.location.sdk
@@ -48,9 +53,9 @@ PRODUCT_BOOT_JARS += oem-services
 endif
 
 #ifeq ($(strip$(BOARD_HAVE_QCOM_FM)),true)
-PRODUCT_BOOT_JARS += qcom.fmradio
+#PRODUCT_BOOT_JARS += qcom.fmradio
 #endif #BOARD_HAVE_QCOM_FM
-PRODUCT_BOOT_JARS += qcmediaplayer
+#PRODUCT_BOOT_JARS += qcmediaplayer
 
 # default is nosdcard, S/W button enabled in resource
 PRODUCT_CHARACTERISTICS := nosdcard
@@ -108,7 +113,7 @@ PRODUCT_COPY_FILES += \
     frameworks/native/data/etc/android.hardware.sensor.stepdetector.xml:system/etc/permissions/android.hardware.sensor.stepdetector.xml
 
 PRODUCT_PACKAGES += telephony-ext
-PRODUCT_BOOT_JARS += telephony-ext
+#PRODUCT_BOOT_JARS += telephony-ext
 
 # Defined the locales
 PRODUCT_LOCALES += th_TH vi_VN tl_PH hi_IN ar_EG ru_RU tr_TR pt_BR bn_IN mr_IN ta_IN te_IN zh_HK \
@@ -119,7 +124,7 @@ PRODUCT_LOCALES += th_TH vi_VN tl_PH hi_IN ar_EG ru_RU tr_TR pt_BR bn_IN mr_IN t
 #PRODUCT_PACKAGE_OVERLAYS := $(QCPATH)/qrdplus/Extension/res \
 #        $(QCPATH)/qrdplus/globalization/multi-language/res-overlay \
 #        $(PRODUCT_PACKAGE_OVERLAYS)
-PRODUCT_PACKAGE_OVERLAYS := $(QCPATH)/qrdplus/Extension/res \
+#PRODUCT_PACKAGE_OVERLAYS := $(QCPATH)/qrdplus/Extension/res \
         $(PRODUCT_PACKAGE_OVERLAYS)
 
 #for android_filesystem_config.h
@@ -146,3 +151,6 @@ else
     PRODUCT_DEFAULT_PROPERTY_OVERRIDES+= \
         ro.logdumpd.enabled=0
 endif
+
+#Keymaster
+PRODUCT_PACKAGES += android.hardware.keymaster@3.0-impl

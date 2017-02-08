@@ -67,10 +67,9 @@ PROTOBUF_SUPPORTED := false
 
 TARGET_USES_ION := true
 TARGET_USES_NEW_ION_API :=true
-TARGET_USES_QCOM_BSP := true
 TARGET_NO_RPC := true
 
-BOARD_KERNEL_CMDLINE := console=ttyHSL0,115200,n8 androidboot.console=ttyHSL0 androidboot.hardware=qcom msm_rtb.filter=0x237 ehci-hcd.park=3 lpm_levels.sleep_disabled=1 androidboot.bootdevice=7824900.sdhci earlycon=msm_hsl_uart,0x78B0000
+BOARD_KERNEL_CMDLINE := console=ttyHSL0,115200,n8 androidboot.console=ttyHSL0 androidboot.hardware=qcom msm_rtb.filter=0x237 ehci-hcd.park=3 lpm_levels.sleep_disabled=1 androidboot.bootdevice=7824900.sdhci earlycon=msm_hsl_uart,0x78B0000 androidboot.selinux=permissive
 #BOARD_KERNEL_SEPARATED_DT := true
 
 BOARD_SECCOMP_POLICY := device/qcom/msm8937_32/seccomp
@@ -109,19 +108,26 @@ TARGET_BOARD_SUFFIX := _64
 TARGET_USES_SSC := true
 
 #Enabling IMS Feature
-TARGET_USES_IMS := TRUE
+TARGET_USES_IMS := false
 
 #PCI RCS
 TARGET_USES_PCI_RCS := false
 
 # Enable sensor multi HAL
-USE_SENSOR_MULTI_HAL := true
+#USE_SENSOR_MULTI_HAL := true
 
 #Enable peripheral manager
 TARGET_PER_MGR_ENABLED := true
 
+ifeq ($(TARGET_USES_AOSP), true)
+TARGET_HW_DISK_ENCRYPTION := false
+else
+# SDClang configuration
+SDCLANG := true
 #Enable HW based full disk encryption
 TARGET_HW_DISK_ENCRYPTION := true
+endif
+
 TARGET_CRYPTFS_HW_PATH := device/qcom/common/cryptfs_hw
 
 TARGET_FORCE_HWC_FOR_VIRTUAL_DISPLAYS := true
