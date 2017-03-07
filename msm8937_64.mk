@@ -1,4 +1,5 @@
 TARGET_USES_AOSP := true
+TARGET_USES_AOSP_FOR_AUDIO := true
 TARGET_USES_QCOM_BSP := false
 
 ifeq ($(TARGET_USES_AOSP),true)
@@ -57,6 +58,10 @@ endif
 #endif #BOARD_HAVE_QCOM_FM
 #PRODUCT_BOOT_JARS += qcmediaplayer
 
+# add vendor manifest file
+PRODUCT_COPY_FILES += \
+    device/qcom/msm8937_64/vintf.xml:system/vendor/manifest.xml
+
 # default is nosdcard, S/W button enabled in resource
 PRODUCT_CHARACTERISTICS := nosdcard
 
@@ -85,6 +90,17 @@ PRODUCT_PACKAGES += \
     AntHalService \
     libantradio \
     antradio_app
+
+# Gralloc
+PRODUCT_PACKAGES += \
+   android.hardware.graphics.allocator@2.0-impl \
+    android.hardware.graphics.allocator@2.0-service \
+    android.hardware.graphics.mapper@2.0-impl
+
+# HW Composer
+PRODUCT_PACKAGES += \
+    android.hardware.graphics.composer@2.1-impl \
+    android.hardware.graphics.composer@2.1-service
 
 PRODUCT_PACKAGES += wcnss_service
 
@@ -154,3 +170,6 @@ endif
 
 #Keymaster
 PRODUCT_PACKAGES += android.hardware.keymaster@3.0-impl
+
+#Enable Lights Impl HAL Compilation
+PRODUCT_PACKAGES += android.hardware.light@2.0-impl
