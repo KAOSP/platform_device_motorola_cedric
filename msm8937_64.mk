@@ -169,6 +169,11 @@ else
         ro.logdumpd.enabled=0
 endif
 
+# Power
+PRODUCT_PACKAGES += \
+    android.hardware.power@1.0-service \
+    android.hardware.power@1.0-impl
+
 # Camera configuration file. Shared by passthrough/binderized camera HAL
 PRODUCT_PACKAGES += camera.device@3.2-impl
 PRODUCT_PACKAGES += android.hardware.camera.provider@2.4-impl
