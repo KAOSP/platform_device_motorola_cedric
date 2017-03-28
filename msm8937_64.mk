@@ -5,17 +5,16 @@ TARGET_USES_QCOM_BSP := false
 ifeq ($(TARGET_USES_AOSP),true)
 TARGET_ENABLE_QC_AV_ENHANCEMENTS := false
 TARGET_DISABLE_DASH := true
-TARGET_USES_QTIC := false
 else
 DEVICE_PACKAGE_OVERLAYS := device/qcom/msm8937_64/overlay
 TARGET_ENABLE_QC_AV_ENHANCEMENTS := true
-TARGET_USES_QTIC := true
--include $(QCPATH)/common/config/qtic-config.mk
 endif
 
 #BOARD_HAVE_QCOM_FM := true
 TARGET_USES_NQ_NFC := false
 TARGET_KERNEL_VERSION := 3.18
+
+-include $(QCPATH)/common/config/qtic-config.mk
 
 # Enable features in video HAL that can compile only on this platform
 TARGET_USES_MEDIA_EXTENSIONS := false
@@ -162,7 +161,7 @@ ifeq ($(findstring perf,$(KERNEL_DEFCONFIG)),)
         PRODUCT_DEFAULT_PROPERTY_OVERRIDES+= \
             ro.logdumpd.enabled=0
     else
-        PRODUCT_DEFAULT_PROPERTY_OVERRIDES+= \
+        #PRODUCT_DEFAULT_PROPERTY_OVERRIDES+= \
             ro.logdumpd.enabled=1
     endif
 else
