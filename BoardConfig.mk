@@ -122,9 +122,6 @@ TARGET_BOARD_SUFFIX := _64
 #Enable SSC Feature
 TARGET_USES_SSC := true
 
-#Enabling IMS Feature
-TARGET_USES_IMS := false
-
 #PCI RCS
 TARGET_USES_PCI_RCS := false
 
