@@ -124,8 +124,6 @@ TARGET_PER_MGR_ENABLED := true
 ifeq ($(TARGET_USES_AOSP), true)
 TARGET_HW_DISK_ENCRYPTION := false
 else
-# SDClang configuration
-SDCLANG := true
 #Enable HW based full disk encryption
 TARGET_HW_DISK_ENCRYPTION := true
 endif
