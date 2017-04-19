@@ -100,7 +100,7 @@ BOARD_EGL_CFG := device/qcom/msm8937_64/egl.cfg
 TARGET_PLATFORM_DEVICE_BASE := /devices/soc.0/
 # Add NON-HLOS files for ota upgrade
 ADD_RADIO_FILES := true
-TARGET_RECOVERY_UPDATER_LIBS += librecovery_updater_msm
+#TARGET_RECOVERY_UPDATER_LIBS += librecovery_updater_msm
 TARGET_INIT_VENDOR_LIB := libinit_msm
 
 #add suffix variable to uniquely identify the board
