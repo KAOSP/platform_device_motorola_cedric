@@ -156,6 +156,12 @@ PRODUCT_LOCALES += th_TH vi_VN tl_PH hi_IN ar_EG ru_RU tr_TR pt_BR bn_IN mr_IN t
 PRODUCT_COPY_FILES += \
      device/qcom/msm8937_64/powerhint.xml:system/etc/powerhint.xml
 
+#Healthd packages
+PRODUCT_PACKAGES += android.hardware.health@1.0-impl \
+                   android.hardware.health@1.0-convert \
+                   android.hardware.health@1.0-service \
+                   libhealthd.msm
+
 #for android_filesystem_config.h
 PRODUCT_PACKAGES += \
     fs_config_files
