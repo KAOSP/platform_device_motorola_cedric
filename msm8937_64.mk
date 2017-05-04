@@ -94,6 +94,8 @@ PRODUCT_PACKAGES += libGLES_android
 PRODUCT_COPY_FILES += \
     frameworks/native/data/etc/android.software.midi.xml:system/etc/permissions/android.software.midi.xml
 
+PRODUCT_PACKAGES += android.hardware.media.omx@1.0-impl
+
 #ANT+ stack
 PRODUCT_PACKAGES += \
     AntHalService \
