@@ -17,7 +17,7 @@ TARGET_KERNEL_VERSION := 3.18
 -include $(QCPATH)/common/config/qtic-config.mk
 
 # Enable features in video HAL that can compile only on this platform
-TARGET_USES_MEDIA_EXTENSIONS := false
+TARGET_USES_MEDIA_EXTENSIONS := true
 
 # media_profiles and media_codecs xmls for msm8937
 ifeq ($(TARGET_ENABLE_QC_AV_ENHANCEMENTS), true)
@@ -194,6 +194,7 @@ PRODUCT_PACKAGES += \
 
 # Camera configuration file. Shared by passthrough/binderized camera HAL
 PRODUCT_PACKAGES += camera.device@3.2-impl
+PRODUCT_PACKAGES += camera.device@1.0-impl
 PRODUCT_PACKAGES += android.hardware.camera.provider@2.4-impl
 # Enable binderized camera HAL
 PRODUCT_PACKAGES += android.hardware.camera.provider@2.4-service
