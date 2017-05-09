@@ -138,6 +138,8 @@ TARGET_CRYPTFS_HW_PATH := device/qcom/common/cryptfs_hw
 
 TARGET_FORCE_HWC_FOR_VIRTUAL_DISPLAYS := true
 
+DEX_PREOPT_DEFAULT := nostripping
+
 # Enable dex pre-opt to speed up initial boot
 ifneq ($(TARGET_USES_AOSP),true)
   ifeq ($(HOST_OS),linux)
