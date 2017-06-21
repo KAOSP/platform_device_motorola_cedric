@@ -63,7 +63,7 @@ PRODUCT_MODEL := msm8937 for arm64
 PRODUCT_BOOT_JARS += tcmiface
 
 ifneq ($(strip $(QCPATH)),)
-#PRODUCT_BOOT_JARS += WfdCommon
+PRODUCT_BOOT_JARS += WfdCommon
 #PRODUCT_BOOT_JARS += com.qti.dpmframework
 #PRODUCT_BOOT_JARS += dpmapi
 #PRODUCT_BOOT_JARS += com.qti.location.sdk
@@ -141,7 +141,10 @@ PRODUCT_PACKAGES += \
     wpa_supplicant_overlay.conf \
     p2p_supplicant_overlay.conf
 
-
+#for wlan
+PRODUCT_PACKAGES += \
+    wificond \
+    wifilogd
 # Feature definition files for msm8937
 PRODUCT_COPY_FILES += \
     frameworks/native/data/etc/android.hardware.sensor.accelerometer.xml:system/etc/permissions/android.hardware.sensor.accelerometer.xml \
