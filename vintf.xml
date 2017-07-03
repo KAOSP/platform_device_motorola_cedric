@@ -60,6 +60,14 @@ IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
         <transport>hwbinder</transport>
         <impl level="generic"></impl>
         <version>1.0</version>
+        <interface>
+            <name>IOmx</name>
+            <instance>default</instance>
+        </interface>
+        <interface>
+            <name>IOmxStore</name>
+            <instance>default</instance>
+        </interface>
     </hal>
     <!-- /video omx hal -->
     <!-- display -->
@@ -273,5 +281,26 @@ IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
                <instance>radioconfig0</instance>
                <instance>radioconfig1</instance>
            </interface>
+    </hal>
+    <!-- gnss -->
+    <hal format="hidl">
+        <name>android.hardware.gnss</name>
+        <transport>hwbinder</transport>
+        <impl level="generic"></impl>
+        <version>1.0</version>
+        <interface>
+            <name>IGnss</name>
+            <instance>default</instance>
+        </interface>
+    </hal>
+    <hal format="hidl">
+        <name>vendor.qti.gnss</name>
+        <transport>hwbinder</transport>
+        <impl level="generic"></impl>
+        <version>1.0</version>
+        <interface>
+            <name>ILocHidlGnss</name>
+            <instance>gnss_vendor</instance>
+        </interface>
     </hal>
 </manifest>
