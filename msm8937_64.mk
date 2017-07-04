@@ -19,7 +19,7 @@ ifeq ($(ENABLE_VENDOR_IMAGE), true)
 #TARGET_USES_QTIC := false
 endif
 
-#BOARD_HAVE_QCOM_FM := true
+BOARD_HAVE_QCOM_FM := true
 TARGET_USES_NQ_NFC := false
 TARGET_KERNEL_VERSION := 3.18
 
@@ -71,9 +71,9 @@ PRODUCT_BOOT_JARS += WfdCommon
 PRODUCT_BOOT_JARS += oem-services
 endif
 
-#ifeq ($(strip$(BOARD_HAVE_QCOM_FM)),true)
-#PRODUCT_BOOT_JARS += qcom.fmradio
-#endif #BOARD_HAVE_QCOM_FM
+ifeq ($(strip$(BOARD_HAVE_QCOM_FM)),true)
+PRODUCT_BOOT_JARS += qcom.fmradio
+endif #BOARD_HAVE_QCOM_FM
 
 # add vendor manifest file
 PRODUCT_COPY_FILES += \
