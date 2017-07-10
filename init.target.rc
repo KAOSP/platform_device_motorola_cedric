@@ -36,10 +36,11 @@ on early-init
     mkdir /dsp 0771 media media
 
 on fs
-    wait /dev/block/bootdevice
+    wait /dev/block/platform/soc/${ro.boot.bootdevice}
+    symlink /dev/block/platform/soc/${ro.boot.bootdevice} /dev/block/bootdevice
     write /proc/sys/vm/swappiness 100
 
-    mount_all fstab.qcom
+    mount_all /vendor/etc/fstab.qcom
 
     # Keeping following partitions outside fstab file. As user may not have
     # these partition flashed on the device. Failure to mount any partition in fstab file
@@ -76,7 +77,7 @@ on post-fs-data
     mkdir /data/misc/dts 0770 media audio
 
 #start camera server as daemon
-service qcamerasvr /system/bin/mm-qcamera-daemon
+service qcamerasvr /system/vendor/bin/mm-qcamera-daemon
     class late_start
     user camera
     group camera system inet input graphics
@@ -84,7 +85,7 @@ service qcamerasvr /system/bin/mm-qcamera-daemon
 on init
    write /sys/module/qpnp_rtc/parameters/poweron_alarm 1
 
-service qfp-daemon /system/bin/qfp-daemon
+service qfp-daemon /system/vendor/bin/qfp-daemon
    class late_start
    user system
    group system drmrpc
@@ -141,12 +142,12 @@ service thermal-engine /system/vendor/bin/thermal-engine
    socket thermal-recv-passive-client stream 0666 system system
    group root
 
-service time_daemon /system/bin/time_daemon
+service time_daemon /system/vendor/bin/time_daemon
    class late_start
    user root
    group root
 
-service audiod /system/bin/audiod
+service audiod /system/vendor/bin/audiod
    class late_start
    user system
    group system
@@ -265,19 +266,19 @@ service hbtp /system/vendor/bin/hbtp_daemon
     group system
     disabled
 
-service dts_configurator /system/bin/dts_configurator
+service dts_configurator /system/vendor/bin/dts_configurator
     class late_start
     user system
     group media audio
     oneshot
 
-service dtseagleservice /system/bin/dts_eagle_service
+service dtseagleservice /system/vendor/bin/dts_eagle_service
     class late_start
     user system
     group audio media
     disabled
 
-service adsprpcd /system/bin/adsprpcd
+service adsprpcd /system/vendor/bin/adsprpcd
     class main
     user media
     group media
