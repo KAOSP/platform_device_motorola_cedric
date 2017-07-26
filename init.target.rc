@@ -180,7 +180,7 @@ on boot
    chown cameraserver cameraserver /dev/cpuset/camera-daemon/tasks
    chmod 0660 /dev/cpuset/camera-daemon/tasks
 
-service wcnss-service /system/bin/wcnss_service
+service wcnss-service /system/vendor/bin/wcnss_service
     class main
     user system
     group system wifi radio
