@@ -230,3 +230,16 @@ PRODUCT_PACKAGES += \
 
 #Enable Lights Impl HAL Compilation
 PRODUCT_PACKAGES += android.hardware.light@2.0-impl
+
+#set KMGK_USE_QTI_SERVICE to true to enable QTI KEYMASTER and GATEKEEPER HIDLs
+ifeq ($(ENABLE_VENDOR_IMAGE), true)
+KMGK_USE_QTI_SERVICE := false
+endif
+
+#Enable AOSP KEYMASTER and GATEKEEPER HIDLs
+ifneq ($(KMGK_USE_QTI_SERVICE), true)
+PRODUCT_PACKAGES += android.hardware.gatekeeper@1.0-impl \
+                    android.hardware.gatekeeper@1.0-service \
+                    android.hardware.keymaster@3.0-impl \
+                    android.hardware.keymaster@3.0-service
+endif
