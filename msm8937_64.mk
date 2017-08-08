@@ -230,6 +230,10 @@ PRODUCT_PACKAGES += \
     vendor.display.color@1.0-service \
     vendor.display.color@1.0-impl
 
+PRODUCT_PACKAGES += \
+    libandroid_net \
+    libandroid_net_32
+
 #Enable Lights Impl HAL Compilation
 PRODUCT_PACKAGES += android.hardware.light@2.0-impl
 
