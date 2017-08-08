@@ -79,7 +79,7 @@ endif #BOARD_HAVE_QCOM_FM
 
 # add vendor manifest file
 PRODUCT_COPY_FILES += \
-    device/qcom/msm8937_64/vintf.xml:$(TARGET_COPY_OUT_VENDOR)/manifest.xml
+    device/qcom/msm8937_64/manifest.xml:$(TARGET_COPY_OUT_VENDOR)/manifest.xml
 
 # default is nosdcard, S/W button enabled in resource
 PRODUCT_CHARACTERISTICS := nosdcard
