@@ -154,12 +154,7 @@ USE_SENSOR_MULTI_HAL := true
 #Enable peripheral manager
 TARGET_PER_MGR_ENABLED := true
 
-ifeq ($(TARGET_USES_AOSP), true)
-TARGET_HW_DISK_ENCRYPTION := false
-else
-#Enable HW based full disk encryption
 TARGET_HW_DISK_ENCRYPTION := true
-endif
 
 TARGET_CRYPTFS_HW_PATH := device/qcom/common/cryptfs_hw
 
