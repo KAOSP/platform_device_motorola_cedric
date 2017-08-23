@@ -4,10 +4,9 @@ TARGET_USES_QCOM_BSP := false
 
 ifeq ($(TARGET_USES_AOSP),true)
 TARGET_DISABLE_DASH := true
-else
-DEVICE_PACKAGE_OVERLAYS := device/qcom/msm8937_64/overlay
 endif
 
+DEVICE_PACKAGE_OVERLAYS := device/qcom/msm8937_64/overlay
 # Default vendor configuration.
 ifeq ($(ENABLE_VENDOR_IMAGE),)
 ENABLE_VENDOR_IMAGE :=true
