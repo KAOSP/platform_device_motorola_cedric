@@ -402,8 +402,8 @@ PRODUCT_COPY_FILES += \
 PRODUCT_PROPERTY_OVERRIDES += ro.boot.vendor.overlay.theme=com.google.android.theme.pixel
 PRODUCT_PROPERTY_OVERRIDES += ro.com.google.ime.theme_id=5
 PRODUCT_PACKAGES += \
-    PixelTheme
-
+    PixelTheme \
+    Stock
 # TEMP FIX
 PRODUCT_PACKAGES += \
     android.hidl.base@1.0 \
