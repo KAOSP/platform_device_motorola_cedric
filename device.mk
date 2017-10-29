@@ -398,6 +398,12 @@ PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/wifi/wpa_supplicant_overlay.conf:$(TARGET_COPY_OUT_VENDOR)/etc/wifi/wpa_supplicant_overlay.conf \
     $(LOCAL_PATH)/wifi/WCNSS_qcom_cfg.ini:$(TARGET_COPY_OUT_VENDOR)/firmware/wlan/prima/WCNSS_qcom_cfg.ini
 
+# Themes
+PRODUCT_PROPERTY_OVERRIDES += ro.boot.vendor.overlay.theme=com.google.android.theme.pixel
+PRODUCT_PROPERTY_OVERRIDES += ro.com.google.ime.theme_id=5
+PRODUCT_PACKAGES += \
+    PixelTheme
+
 # TEMP FIX
 PRODUCT_PACKAGES += \
     android.hidl.base@1.0 \
