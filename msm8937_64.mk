@@ -24,7 +24,15 @@ TARGET_USES_NQ_NFC := true
 
 ENABLE_AB ?= false
 
-TARGET_KERNEL_VERSION := 3.18
+ifneq ($(wildcard kernel/msm-3.18),)
+    TARGET_KERNEL_VERSION := 3.18
+    $(warning "Build with 3.18 kernel.")
+else ifneq ($(wildcard kernel/msm-4.9),)
+    TARGET_KERNEL_VERSION := 4.9
+    $(warning "Build with 4.9 kernel")
+else
+    $(warning "Unknown kernel")
+endif
 
 TARGET_ENABLE_QC_AV_ENHANCEMENTS := true
 
@@ -68,6 +76,10 @@ PRODUCT_BRAND := Android
 PRODUCT_MODEL := msm8937 for arm64
 
 PRODUCT_BOOT_JARS += tcmiface
+
+# Kernel modules install path
+KERNEL_MODULES_INSTALL := dlkm
+KERNEL_MODULES_OUT := out/target/product/$(PRODUCT_NAME)/$(KERNEL_MODULES_INSTALL)/lib/modules
 
 ifneq ($(strip $(QCPATH)),)
 PRODUCT_BOOT_JARS += WfdCommon
