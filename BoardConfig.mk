@@ -180,3 +180,7 @@ endif
 FEATURE_QCRIL_UIM_SAP_SERVER_MODE := true
 
 BOARD_HAL_STATIC_LIBRARIES := libhealthd.msm
+
+ifeq ($(strip $(TARGET_KERNEL_VERSION)), 4.9)
+PMIC_QG_SUPPORT := true
+endif
