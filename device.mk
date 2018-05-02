@@ -406,6 +406,10 @@ PRODUCT_PACKAGES += \
     Stock \
     Mono
 
+# APNs
+PRODUCT_COPY_FILES += \
+     $(LOCAL_PATH)/apns-conf.xml:system/etc/apns-conf.xml
+
 # TEMP FIX
 PRODUCT_PACKAGES += \
     android.hidl.base@1.0 \
