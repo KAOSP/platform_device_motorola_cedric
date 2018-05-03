@@ -399,8 +399,6 @@ PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/wifi/WCNSS_qcom_cfg.ini:$(TARGET_COPY_OUT_VENDOR)/firmware/wlan/prima/WCNSS_qcom_cfg.ini
 
 # Themes
-PRODUCT_PROPERTY_OVERRIDES += ro.boot.vendor.overlay.theme=com.google.android.theme.pixel
-PRODUCT_PROPERTY_OVERRIDES += ro.com.google.ime.theme_id=5
 PRODUCT_PACKAGES += \
     PixelTheme \
     Stock \

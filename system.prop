@@ -266,3 +266,6 @@ profiler.force_disable_ulog=1
 # Navbar
 qemu.hw.mainkeys=0
 
+# Pixel Theme
+ro.boot.vendor.overlay.theme=com.google.android.theme.pixel
+ro.com.google.ime.theme_id=5
