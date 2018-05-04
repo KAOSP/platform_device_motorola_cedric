@@ -923,13 +923,9 @@ on property:sys.boot_completed=1
     write /sys/devices/system/cpu/cpu4/cpufreq/interactive/min_sample_time 40000
     write /sys/devices/system/cpu/cpu4/cpufreq/scaling_min_freq 768000
 
-    # re-enable thermal & BCL core_control now
+    # re-enable core ctrl 
     write /sys/module/msm_thermal/core_control/enabled 1
-    write /sys/devices/soc/soc:qcom,bcl/mode "disable"
-    write /sys/devices/soc/soc:qcom,bcl/hotplug_mask 192
-    write /sys/devices/soc/soc:qcom,bcl/hotplug_soc_mask 240
-    write /sys/devices/soc/soc:qcom,bcl/mode "enable"
-
+    
     # Bring up all cores online
     write /sys/devices/system/cpu/cpu1/online 1
     write /sys/devices/system/cpu/cpu2/online 1
