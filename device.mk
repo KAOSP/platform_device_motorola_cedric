@@ -18,8 +18,7 @@ $(call inherit-product, $(SRC_TARGET_DIR)/product/languages_full.mk)
 
 # Overlay
 DEVICE_PACKAGE_OVERLAYS += \
-    $(LOCAL_PATH)/overlay \
-    $(LOCAL_PATH)/overlay-lineage
+    $(LOCAL_PATH)/overlay 
 
 # These are the hardware-specific features
 PRODUCT_COPY_FILES += \
@@ -113,9 +112,9 @@ PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/configs/camera/mot_ov5695_chromatix.xml:system/etc/camera/mot_ov5695_chromatix.xml \
     $(LOCAL_PATH)/configs/camera/mot_imx258_chromatix.xml:system/etc/camera/mot_imx258_chromatix.xml
 
-# LineageActions
+# MotoActions
 PRODUCT_PACKAGES += \
-    LineageActions
+    MotoActions
 
 # Display
 PRODUCT_PACKAGES += \
