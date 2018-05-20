@@ -5,11 +5,9 @@
 
 TARGET_BOARD_PLATFORM := msm8937
 # This value will be shown on fastboot menu
-TARGET_BOOTLOADER_BOARD_NAME := QC_Reference_Phone
 
 TARGET_COMPILE_WITH_MSM_KERNEL := true
 TARGET_KERNEL_APPEND_DTB := true
-BOARD_USES_GENERIC_AUDIO := true
 
 -include $(QCPATH)/common/msm8937_64/BoardConfigVendor.mk
 
@@ -39,15 +37,11 @@ TARGET_2ND_CPU_VARIANT := cortex-a53
 USE_CLANG_PLATFORM_BUILD := true
 TARGET_CPU_CORTEX_A53 := true
 
-TARGET_NO_BOOTLOADER := false
 TARGET_NO_KERNEL := false
 BOOTLOADER_GCC_VERSION := arm-eabi-4.8
 BOOTLOADER_PLATFORM := msm8952 # use msm8937 LK configuration
 #MALLOC_IMPL := dlmalloc
 MALLOC_SVELTE := true
-
-TARGET_USERIMAGES_USE_EXT4 := true
-BOARD_BOOTIMAGE_PARTITION_SIZE := 0x04000000
 
 ifeq ($(ENABLE_AB),true)
 #A/B related defines
@@ -60,46 +54,15 @@ BOARD_BUILD_SYSTEM_ROOT_IMAGE := true
 TARGET_NO_RECOVERY := true
 BOARD_USES_RECOVERY_AS_BOOT := true
 else
-BOARD_RECOVERYIMAGE_PARTITION_SIZE := 0x04000000
-BOARD_CACHEIMAGE_PARTITION_SIZE := 268435456
-BOARD_CACHEIMAGE_FILE_SYSTEM_TYPE := ext4
 TARGET_RECOVERY_UPDATER_LIBS += librecovery_updater_msm
 endif
 
-ifeq ($(ENABLE_AB), true)
-  ifeq ($(ENABLE_VENDOR_IMAGE),true)
-    TARGET_RECOVERY_FSTAB := device/qcom/msm8937_64/recovery_AB_split_variant.fstab
-  else
-    TARGET_RECOVERY_FSTAB := device/qcom/msm8937_64/recovery_AB_non-split_variant.fstab
-  endif
-else
-   ifeq ($(ENABLE_VENDOR_IMAGE),true)
-    TARGET_RECOVERY_FSTAB := device/qcom/msm8937_64/recovery_non-AB_split_variant.fstab
-  else
-    TARGET_RECOVERY_FSTAB := device/qcom/msm8937_64/recovery_non-AB_non-split_variant.fstab
-  endif
-endif
-
-BOARD_SYSTEMIMAGE_PARTITION_SIZE := 3221225472
-BOARD_USERDATAIMAGE_PARTITION_SIZE := 1971322880
-BOARD_PERSISTIMAGE_PARTITION_SIZE := 33554432
-BOARD_PERSISTIMAGE_FILE_SYSTEM_TYPE := ext4
-BOARD_OEMIMAGE_PARTITION_SIZE := 268435456
-BOARD_FLASH_BLOCK_SIZE := 131072 # (BOARD_KERNEL_PAGESIZE * 64)
-
-ifeq ($(ENABLE_VENDOR_IMAGE), true)
-BOARD_VENDORIMAGE_PARTITION_SIZE := 1073741824
-BOARD_VENDORIMAGE_FILE_SYSTEM_TYPE := ext4
-TARGET_COPY_OUT_VENDOR := vendor
-BOARD_PROPERTY_OVERRIDES_SPLIT_ENABLED := true
-endif
-
-# Enable kaslr seed support
+# Enable kaslr seed support ok
 ifeq ($(TARGET_KERNEL_VERSION), 4.9)
 KASLRSEED_SUPPORT := true
 endif
 
-# Enable suspend during charger mode
+# Enable suspend during charger mode ok
 BOARD_CHARGER_ENABLE_SUSPEND := true
 BOARD_CHARGER_DISABLE_INIT_BLANK := true
 
@@ -108,7 +71,7 @@ PROTOBUF_SUPPORTED := false
 
 TARGET_USES_ION := true
 TARGET_USES_QCOM_DISPLAY_BSP := true
-TARGET_USES_NEW_ION_API :=true
+TARGET_USES_NEW_ION_API := true
 TARGET_USES_HWC2 := true
 TARGET_USES_GRALLOC1 := true
 TARGET_USES_COLOR_METADATA := true
@@ -144,9 +107,9 @@ BOARD_VENDOR_KERNEL_MODULES := \
 endif
 
 ifeq ($(strip $(TARGET_KERNEL_VERSION)), 4.9)
-    BOARD_KERNEL_CMDLINE := console=ttyMSM0,115200,n8 androidboot.console=ttyMSM0 androidboot.hardware=qcom msm_rtb.filter=0x237 ehci-hcd.park=3 lpm_levels.sleep_disabled=1 androidboot.bootdevice=7824900.sdhci earlycon=msm_serial_dm,0x78B0000
+    BOARD_KERNEL_CMDLINE := console=ttyMSM0,115200,n8 androidboot.console=ttyMSM0 androidboot.hardware=qcom msm_rtb.filter=0x237 ehci-hcd.park=3 lpm_levels.sleep_disabled=1 androidboot.bootdevice=7824900.sdhci 
 else ifeq ($(strip $(TARGET_KERNEL_VERSION)), 3.18)
-    BOARD_KERNEL_CMDLINE := console=ttyHSL0,115200,n8 androidboot.console=ttyHSL0 androidboot.hardware=qcom msm_rtb.filter=0x237 ehci-hcd.park=3 lpm_levels.sleep_disabled=1 androidboot.bootdevice=7824900.sdhci earlycon=msm_hsl_uart,0x78B0000
+    BOARD_KERNEL_CMDLINE := console=ttyHSL0,115200,n8 androidboot.console=ttyHSL0 androidboot.hardware=qcom msm_rtb.filter=0x237 ehci-hcd.park=3 lpm_levels.sleep_disabled=1 androidboot.bootdevice=7824900.sdhci 
 endif
 #BOARD_KERNEL_SEPARATED_DT := true
 
@@ -154,8 +117,6 @@ BOARD_SECCOMP_POLICY := device/qcom/msm8937_64/seccomp
 
 BOARD_KERNEL_BASE        := 0x80000000
 BOARD_KERNEL_PAGESIZE    := 2048
-BOARD_KERNEL_TAGS_OFFSET := 0x01E00000
-BOARD_RAMDISK_OFFSET     := 0x02000000
 
 TARGET_KERNEL_ARCH := arm64
 TARGET_KERNEL_HEADER_ARCH := arm64
@@ -172,11 +133,7 @@ MAX_EGL_CACHE_KEY_SIZE := 12*1024
 # of the device.
 MAX_EGL_CACHE_SIZE := 2048*1024
 
-BOARD_EGL_CFG := device/qcom/msm8937_64/egl.cfg
 TARGET_PLATFORM_DEVICE_BASE := /devices/soc.0/
-# Add NON-HLOS files for ota upgrade
-ADD_RADIO_FILES := true
-TARGET_INIT_VENDOR_LIB := libinit_msm
 
 #add suffix variable to uniquely identify the board
 TARGET_BOARD_SUFFIX := _64
@@ -222,3 +179,5 @@ BOARD_HAL_STATIC_LIBRARIES := libhealthd.msm
 ifeq ($(strip $(TARGET_KERNEL_VERSION)), 4.9)
 PMIC_QG_SUPPORT := true
 endif
+
+test
