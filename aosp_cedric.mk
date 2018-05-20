@@ -27,10 +27,14 @@ PRODUCT_DEVICE := cedric
 PRODUCT_NAME := aosp_cedric
 PRODUCT_BRAND := motorola
 PRODUCT_MANUFACTURER := motorola
-PRODUCT_MODEL := AOSP on Moto G5
+PRODUCT_MODEL := CAF on Moto G5
 
 PRODUCT_ENFORCE_RRO_TARGETS := \
     framework-res
+
+
+# Inherit from common msm8937_64
+$(call inherit-product, device/qcom/msm8937_64/msm8937_64.mk)
 
 # for specific
 $(call inherit-product, device/motorola/cedric/device.mk)
