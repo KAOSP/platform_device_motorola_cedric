@@ -150,7 +150,7 @@ else ifeq ($(strip $(TARGET_KERNEL_VERSION)), 3.18)
 endif
 #BOARD_KERNEL_SEPARATED_DT := true
 
-BOARD_SECCOMP_POLICY := device/qcom/msm8937_32/seccomp
+BOARD_SECCOMP_POLICY := device/qcom/msm8937_64/seccomp
 
 BOARD_KERNEL_BASE        := 0x80000000
 BOARD_KERNEL_PAGESIZE    := 2048
