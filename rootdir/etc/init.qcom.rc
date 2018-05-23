@@ -26,6 +26,7 @@
 #
 
 import /system/vendor/etc/init/hw/init.mmi.rc
+import /system/vendor/etc/init/hw/init.radium.rc
 
 on early-init
     mount debugfs debugfs /sys/kernel/debug
@@ -973,3 +974,6 @@ on property:sys.boot_completed=1
     
     #WDSP FW boot sysfs node used by STHAL
     chown media audio /sys/kernel/wdsp0/boot
+    
+    #Override the kernel settings with Radium ones
+    setprop ksettings.completed 1
