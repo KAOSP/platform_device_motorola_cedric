@@ -58,9 +58,7 @@ ro.qualcomm.bluetooth.map=true
 persist.bt.enableAptXHD=true
 
 # Camera
-persist.camera.is_type=1
-persist.camera.gyro.android=1
-
+persist.camera.HAL3.enabled=1
 camera.disable_zsl_mode=1
 camera.display.umax=1920x1080
 camera.display.lmax=1280x720
